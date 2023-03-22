@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using StarterAssets;
+
 
 public class GunScript : MonoBehaviour
 {
-    StarterAssetsInputs input;
+   
     [SerializeField]
     GameObject bulletPrefab;
     [SerializeField]
@@ -16,23 +16,22 @@ public class GunScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        input = transform.root.GetComponent<StarterAssetsInputs>();
+        //input = transform.root.GetComponent<StarterAssetsInputs>();
         //bulletSpeed = GetComponent<float>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (input.shoot)
-        {
-            Shoot();
-            input.shoot = false;
-        }
+       if (Input.GetKeyDown(KeyCode.Mouse0))
+       {
+         Shoot();
+       }
     }
 
     void Shoot()
     {
-        //Debug.Log("SHOOT");
+        Debug.Log("SHOOT");
         GameObject bullet = Instantiate(bulletPrefab, bulletPoint.transform.position, transform.rotation);
         bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
     }
