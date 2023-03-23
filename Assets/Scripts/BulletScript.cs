@@ -36,7 +36,6 @@ public class BulletScript : MonoBehaviour
     {
         if(!isStick)
         {
-         
             FixedJoint joint = gameObject.AddComponent<FixedJoint>();
             // sets joint position to point of contact
             joint.anchor = collision.contacts[0].point;
@@ -45,9 +44,22 @@ public class BulletScript : MonoBehaviour
             // Stops objects from continuing to collide and creating more joints
             joint.enableCollision = false;
             
-            isStick = true;   
+            isStick = true;
+
+            ChangeMaterial(collision.contacts[0].otherCollider);
         }
     }
 
+    private void ChangeMaterial(Collider other)
+    {
+        // Get the Renderer component of the current object
+        Renderer renderer = GetComponent<Renderer>();
 
+        // Check if the collided object has a Renderer component
+        Renderer otherRenderer = other.GetComponent<Renderer>();
+        if (otherRenderer && other.CompareTag("ColorObject"))
+        {
+            renderer.material = otherRenderer.sharedMaterial;
+        }
+    }
 }
