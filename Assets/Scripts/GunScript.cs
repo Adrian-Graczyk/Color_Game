@@ -34,7 +34,6 @@ public class GunScript : MonoBehaviour
 
     void Shoot()
     {
-        Debug.Log("SHOOT");
         GameObject bullet = Instantiate(bulletPrefab, bulletPoint.transform.position, transform.rotation);
         bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
         bullet.GetComponent<Renderer>().sharedMaterial = bulletMaterial;
