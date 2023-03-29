@@ -13,7 +13,9 @@ public class GunScript : MonoBehaviour
     [SerializeField]
     float bulletSpeed;
 
-    public Material bulletMaterial;
+    
+
+    private Material bulletMaterial;
 
     // Start is called before the first frame update
     void Start()
@@ -37,5 +39,13 @@ public class GunScript : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, bulletPoint.transform.position, transform.rotation);
         bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
         bullet.GetComponent<Renderer>().sharedMaterial = bulletMaterial;
+    }
+
+    public void onBulletPickUp(Component sender, object data) {
+        Debug.Log("onBulletPickUp event received with data: " + data);
+
+        if (data is Material) {
+            bulletMaterial = (Material) data;
+        }
     }
 }

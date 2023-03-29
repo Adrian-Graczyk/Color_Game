@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class BulletPickup : MonoBehaviour
 {
+
+    [Header("Events")]
+    public GameEvent onBulletPickUp;
+
     public float pickupRange = 1.5f;
 
     void Update()
@@ -21,7 +25,7 @@ public class BulletPickup : MonoBehaviour
                 Collider hitCollider = hitInfo.collider;
 
                 if (hitCollider.CompareTag("Bullet")) {
-                    GetComponent<GunScript>().bulletMaterial = hitCollider.GetComponent<Renderer>().sharedMaterial;
+                    onBulletPickUp.Raise(this, hitCollider.GetComponent<Renderer>().sharedMaterial);
                     Destroy(hitCollider.gameObject);
                 }
             }

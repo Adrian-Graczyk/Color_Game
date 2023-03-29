@@ -494,6 +494,7 @@ GameObject:
   - component: {fileID: 137176463}
   - component: {fileID: 137176462}
   - component: {fileID: 137176461}
+  - component: {fileID: 137176464}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Player
@@ -580,6 +581,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137176459}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &137176464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137176459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 065938c34b24ec440943f2eeea1e73ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onBulletPickUp: {fileID: 11400000, guid: 395d3c781bb1a574a8bbb9782ddf96d7, type: 2}
+  pickupRange: 1.5
 --- !u!1 &274892734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1521,8 +1536,7 @@ MonoBehaviour:
     type: 3}
   bulletPoint: {fileID: 1982892902}
   bulletSpeed: 300
-  bulletMaterial: {fileID: 0}
---- !u!114 &1455886533
+--- !u!114 &1455886536
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1531,10 +1545,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1455886528}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 065938c34b24ec440943f2eeea1e73ff, type: 3}
+  m_Script: {fileID: 11500000, guid: e949f2a891e1a2d48b1665378d20a314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupRange: 1.5
+  gameEvent: {fileID: 11400000, guid: 395d3c781bb1a574a8bbb9782ddf96d7, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1455886532}
+        m_TargetAssemblyTypeName: GunScript, Assembly-CSharp
+        m_MethodName: onBulletPickUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!850595691 &1634869392
 LightingSettings:
   m_ObjectHideFlags: 0
