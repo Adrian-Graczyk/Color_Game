@@ -35,7 +35,8 @@ public class BulletScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(!isStick)
+        Debug.Log(collision.contacts[0].otherCollider.name);
+        if(!isStick && collision.contacts[0].otherCollider.tag != "Enemy")
         {
             FixedJoint joint = gameObject.AddComponent<FixedJoint>();
             // sets joint position to point of contact

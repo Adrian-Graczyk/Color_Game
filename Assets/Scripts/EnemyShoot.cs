@@ -19,6 +19,8 @@ public class EnemyShoot : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
+
+        ChangeTags(transform);
     }
 
     void Update()
@@ -60,6 +62,16 @@ public class EnemyShoot : MonoBehaviour
             transform.rotation = Quaternion.Slerp(originalRotation, targetRotation, elapsedTime / aimDuration);
             elapsedTime += Time.deltaTime;
             yield return null;
+        }
+    }
+
+    void ChangeTags(Transform currentTransform)
+    {
+        currentTransform.gameObject.tag = "Enemy";
+
+        foreach (Transform child in currentTransform)
+        {
+            ChangeTags(child);
         }
     }
 }
