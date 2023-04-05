@@ -20,6 +20,7 @@ public class BulletScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        if(!gameObject.CompareTag("EnemyBullet"))
         Physics.IgnoreCollision(GetComponent<Collider>(), GameObject.FindGameObjectWithTag("Player").GetComponent<Collider>(), true);
     }
 
@@ -36,7 +37,7 @@ public class BulletScript : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.contacts[0].otherCollider.name);
-        if(!isStick && collision.contacts[0].otherCollider.tag != "Enemy")
+        if(!isStick && collision.contacts[0].otherCollider.tag != "Enemy" && collision.contacts[0].otherCollider.tag != "EnemyBody")
         {
             FixedJoint joint = gameObject.AddComponent<FixedJoint>();
             // sets joint position to point of contact

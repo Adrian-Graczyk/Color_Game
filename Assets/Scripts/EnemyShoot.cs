@@ -66,8 +66,9 @@ public class EnemyShoot : MonoBehaviour
     }
 
     void ChangeTags(Transform currentTransform)
-    {
-        currentTransform.gameObject.tag = "Enemy";
+    {   
+        if (!currentTransform.gameObject.CompareTag("Enemy"))
+        currentTransform.gameObject.tag = "EnemyBody";
 
         foreach (Transform child in currentTransform)
         {

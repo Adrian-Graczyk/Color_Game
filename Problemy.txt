@@ -1,0 +1,5 @@
+Brak kolizji miecza z przeciwnikami (działa na cubach, nie działa na postaciach)
+meh ragdoll
+Za trudne podnoszenie pocisków 
+niepłynne obracanie się wrogów
+przeciwynicy strzelają tylko w lini poziomej (połozenie wyżej/niżej gwarantuje brak trafienia) 

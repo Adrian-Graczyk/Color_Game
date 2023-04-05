@@ -8,9 +8,11 @@ public class RagdollScript : MonoBehaviour
     private Rigidbody[] rigidBodies;
     private Animator animator;
     private MonoBehaviour[] otherScripts;
+    public bool isDead;
 
     private void Start()
     {
+        isDead = false;
         // Get all the rigidbodies of the character
         rigidBodies = GetComponentsInChildren<Rigidbody>();
 
@@ -32,7 +34,7 @@ public class RagdollScript : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Check if the collision was with a game object with tag "bullet"
-        if (collision.gameObject.CompareTag("Bullet") && !isRagdollActive)
+        if ((collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("Blade")) && !isRagdollActive)
         {
             GetComponent<BoxCollider>().enabled = false;
             // Enable ragdoll
@@ -40,7 +42,7 @@ public class RagdollScript : MonoBehaviour
             SetRigidbodyState(true);
             animator.enabled = false;
             isRagdollActive = true;
-
+            isDead = true;
         }
 
 

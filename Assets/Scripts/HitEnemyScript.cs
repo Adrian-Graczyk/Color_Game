@@ -8,7 +8,7 @@ public class HitEnemyScript : MonoBehaviour
     
     void Start()
     {
-        material = GetComponentInChildren<Renderer>().material;
+        material = GetComponentInChildren<Renderer>().sharedMaterial;
         Debug.Log(material);
     }
 

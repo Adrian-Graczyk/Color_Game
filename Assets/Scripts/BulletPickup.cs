@@ -25,7 +25,7 @@ public class BulletPickup : MonoBehaviour
                 Collider hitCollider = hitInfo.collider;
 
                 if (hitCollider.CompareTag("Bullet")) {
-                    onBulletPickUp.Raise(this, hitCollider.GetComponent<Renderer>().sharedMaterial);
+                    onBulletPickUp.Raise(this, hitCollider.GetComponent<Renderer>().material);
                     Destroy(hitCollider.gameObject);
                 }
             }
