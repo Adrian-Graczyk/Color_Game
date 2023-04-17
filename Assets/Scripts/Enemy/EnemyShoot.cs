@@ -10,6 +10,7 @@ public class EnemyShoot : MonoBehaviour
     public float projectileSpeed = 10.0f; // speed of the projectile
     public float projectileLifetime = 2.0f; // how long the projectile will exist before being destroyed
     public float aimDuration = 0.5f; // how long it takes to aim at the player
+    public float shootingRange = 30f; // how long it takes to aim at the player
 
     private Transform player; // reference to the player
     private Animator animator; // reference to the animator component
@@ -26,7 +27,7 @@ public class EnemyShoot : MonoBehaviour
     void Update()
     {
         // check if the player is within shooting range and if it's time to shoot again
-        if (Vector3.Distance(transform.position, player.position) < 10.0f && Time.time > nextFireTime)
+        if (Vector3.Distance(transform.position, player.position) < shootingRange && Time.time > nextFireTime)
         {
             // set the next fire time
             nextFireTime = Time.time + fireRate;

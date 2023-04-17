@@ -184,7 +184,7 @@ public class PlayerMovement : MonoBehaviour
     {
         isCrouched = true;
         transform.localScale = new Vector3(transform.localScale.x, crouchHeightMultiplier * playerHeight, transform.localScale.z);
-        transform.position = new Vector3(transform.position.x, playerHeight * (1-crouchHeightMultiplier), transform.position.z);
+        transform.position = new Vector3(transform.position.x, transform.position.y - playerHeight * (1-crouchHeightMultiplier), transform.position.z);
     }
 
     void StandUp()
