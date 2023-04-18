@@ -12,7 +12,6 @@ public class HitEnemyScript : MonoBehaviour
         Debug.Log(material);
     }
 
-
     private void OnCollisionEnter(Collision collision)
     {
         Collider otherCollider = collision.contacts[0].otherCollider;
@@ -21,12 +20,10 @@ public class HitEnemyScript : MonoBehaviour
 
         Debug.Log("tag: " + otherCollider.tag + " name: " + otherMaterial.name + " expected: " + material.name);
 
-
         if ((otherCollider.CompareTag("Bullet") || otherCollider.CompareTag("Blade")))
         {
-            Debug.Log("SFAGFASFASFAS");
-            collision.contacts[0].thisCollider.GetComponentInChildren<Renderer>().material.color = Color.white;
+            Debug.Log("Tag is matching Bullet or Blade");
+            thisCollider.GetComponentInChildren<Renderer>().material.color = Color.white;
         }
-
     }
 }

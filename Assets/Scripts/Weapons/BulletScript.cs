@@ -21,7 +21,7 @@ public class BulletScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         if(!gameObject.CompareTag("EnemyBullet"))
-        Physics.IgnoreCollision(GetComponent<Collider>(), GameObject.FindGameObjectWithTag("Player").GetComponent<Collider>(), true);
+        Physics.IgnoreCollision(GetComponent<Collider>(), GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Collider>(), true);
     }
 
     // Update is called once per frame

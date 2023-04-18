@@ -16,7 +16,7 @@ public class SwordScript : MonoBehaviour
     {
         animator = Sword.GetComponent<Animator>();
         swordBladeCollider = SwordBlade.GetComponent<BoxCollider>();
-        Physics.IgnoreCollision(swordBladeCollider, GameObject.FindGameObjectWithTag("Player").GetComponent<Collider>(), true);
+        Physics.IgnoreCollision(swordBladeCollider, GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Collider>(), true);
 
         swordBladeCollider.enabled = false;
     }
@@ -32,6 +32,7 @@ public class SwordScript : MonoBehaviour
 
     public void SwordAttack()
     {
+        Debug.Log("Sword Attack");
         animator.SetTrigger("Attack");
         swordBladeCollider.enabled = true;
         canAttack = false;
