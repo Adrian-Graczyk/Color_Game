@@ -8,9 +8,13 @@ public class SwordScript : MonoBehaviour
     [SerializeField] private GameObject SwordBlade;
     [SerializeField] private bool canAttack =  true;
     [SerializeField] private float attackCooldown = 0.6f;
+    [SerializeField] public LayerMask enemyLayer;
+
+    [Header("Events")]
+    public GameEvent onEnemyHitBySword;
 
     private Animator animator;
-    private BoxCollider swordBladeCollider; 
+    private BoxCollider swordBladeCollider;
 
     private void Start()
     {
@@ -36,6 +40,14 @@ public class SwordScript : MonoBehaviour
         animator.SetTrigger("Attack");
         swordBladeCollider.enabled = true;
         canAttack = false;
+        Collider[] colliders = Physics.OverlapBox(swordBladeCollider.transform.position, swordBladeCollider.bounds.size, swordBladeCollider.transform.rotation, enemyLayer);
+        
+        foreach (Collider collider in colliders)
+        {
+            Debug.Log("Overlapping with " + collider.gameObject.name);
+            onEnemyHitBySword.Raise(this, collider.gameObject);
+        }
+    
         StartCoroutine(ResetAttackCooldown());
     }
 

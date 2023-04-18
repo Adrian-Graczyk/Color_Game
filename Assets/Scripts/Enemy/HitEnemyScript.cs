@@ -23,7 +23,22 @@ public class HitEnemyScript : MonoBehaviour
         if ((otherCollider.CompareTag("Bullet") || otherCollider.CompareTag("Blade")))
         {
             Debug.Log("Tag is matching Bullet or Blade");
-            thisCollider.GetComponentInChildren<Renderer>().material.color = Color.white;
+            GetComponentInChildren<Renderer>().material.color = Color.white;
+        }
+    }
+
+    public void onHitBySword(Component sender, object data)
+    {
+        if (data is GameObject && (GameObject) data == gameObject)
+        {
+            Material material = GetComponentInChildren<Renderer>().sharedMaterial;
+            Material otherMaterial = sender.GetComponentInChildren<Renderer>().sharedMaterial;
+            Debug.Log("thisMaterial: " + material + "  otherMaterial: " + otherMaterial);
+            if (material.name == otherMaterial.name || material.color == Color.white)
+            {
+                Debug.Log("Hit by sword (HitEnemyScript)");
+                GetComponentInChildren<Renderer>().material.color = Color.white;
+            }
         }
     }
 }

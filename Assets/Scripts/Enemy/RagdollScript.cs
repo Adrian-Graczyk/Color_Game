@@ -31,22 +31,37 @@ public class RagdollScript : MonoBehaviour
         SetRigidbodyState(false);
     }
 
+    public void onHitBySword(Component sender, object data)
+    {
+        if (data is GameObject && (GameObject) data == gameObject)
+        {
+            Material material = GetComponentInChildren<Renderer>().sharedMaterial;
+            Material otherMaterial = sender.GetComponentInChildren<Renderer>().sharedMaterial;
+            if (material.name == otherMaterial.name || material.color == Color.white)
+            {
+                Debug.Log("Hit by sword (RagdollScript)");
+                EnableRagdoll();
+            }
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         // Check if the collision was with a game object with tag "bullet"
         if ((collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("Blade")) && !isRagdollActive)
         {
-            GetComponent<BoxCollider>().enabled = false;
-            // Enable ragdoll
-            SetScriptsState(true);
-            SetRigidbodyState(true);
-            animator.enabled = false;
-            isRagdollActive = true;
-            isDead = true;
+            EnableRagdoll();
         }
+    }
 
-
-
+    private void EnableRagdoll()
+    {
+        GetComponent<BoxCollider>().enabled = false;
+        SetScriptsState(true);
+        SetRigidbodyState(true);
+        animator.enabled = false;
+        isRagdollActive = true;
+        isDead = true;
     }
 
     private void SetRigidbodyState(bool state)

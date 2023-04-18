@@ -1061,50 +1061,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3108874520677439405, guid: c7cbcb6944a8695439858fe9559fd6b7,
-        type: 3}
-      propertyPath: m_Quality
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4233385686589981458, guid: c7cbcb6944a8695439858fe9559fd6b7,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7452328881205724114, guid: c7cbcb6944a8695439858fe9559fd6b7,
         type: 3}
       propertyPath: m_Name
       value: RedEnemyShoot (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7758176532006533476, guid: c7cbcb6944a8695439858fe9559fd6b7,
-        type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7758176532006533476, guid: c7cbcb6944a8695439858fe9559fd6b7,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7758176533265906334, guid: c7cbcb6944a8695439858fe9559fd6b7,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7758176533265906402, guid: c7cbcb6944a8695439858fe9559fd6b7,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7758176533265906402, guid: c7cbcb6944a8695439858fe9559fd6b7,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7758176533265906402, guid: c7cbcb6944a8695439858fe9559fd6b7,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7791276896642570600, guid: c7cbcb6944a8695439858fe9559fd6b7,
         type: 3}
@@ -1775,6 +1735,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RedEnemyShoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 7758176533265906334, guid: c7cbcb6944a8695439858fe9559fd6b7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7791276896642570600, guid: c7cbcb6944a8695439858fe9559fd6b7,
         type: 3}
@@ -2720,6 +2685,10 @@ MonoBehaviour:
   SwordBlade: {fileID: 14911682}
   canAttack: 1
   attackCooldown: 1
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  onEnemyHitBySword: {fileID: 11400000, guid: 337efa3561c0ba04eb00a88a06902fc5, type: 2}
 --- !u!1001 &7758176532252905377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2731,6 +2700,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ch36_nonPBR
+      objectReference: {fileID: 0}
+    - target: {fileID: 7758176533265906334, guid: c7cbcb6944a8695439858fe9559fd6b7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7791276896642570600, guid: c7cbcb6944a8695439858fe9559fd6b7,
         type: 3}

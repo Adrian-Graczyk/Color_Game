@@ -2398,7 +2398,8 @@ GameObject:
   - component: {fileID: 7758176533265906334}
   - component: {fileID: 7758176533265906405}
   - component: {fileID: 7758176533265906403}
-  m_Layer: 0
+  - component: {fileID: 253519583}
+  m_Layer: 10
   m_Name: RedEnemyShoot
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2463,7 +2464,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7452328881205724114}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f46b6227d6567e41b4ca122acda3294, type: 3}
   m_Name: 
@@ -2475,6 +2476,8 @@ MonoBehaviour:
   projectileSpeed: 100
   projectileLifetime: 2
   aimDuration: 0.3
+  predictionTimeAdjust: 0.7
+  shootingRange: 30
 --- !u!114 &7758176533265906405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2499,6 +2502,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f0cdccbfcbbbf4780cc823572653dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDead: 0
+--- !u!114 &253519583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7452328881205724114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e949f2a891e1a2d48b1665378d20a314, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 337efa3561c0ba04eb00a88a06902fc5, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7758176533265906405}
+        m_TargetAssemblyTypeName: HitEnemyScript, Assembly-CSharp
+        m_MethodName: onHitBySword
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7758176533265906403}
+        m_TargetAssemblyTypeName: RagdollScript, Assembly-CSharp
+        m_MethodName: onHitBySword
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7624393784143873103
 GameObject:
   m_ObjectHideFlags: 0
@@ -3167,9 +3211,9 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &7758176532006533479
 BoxCollider:
   m_ObjectHideFlags: 0
