@@ -10,15 +10,16 @@ public class EnemyShoot : MonoBehaviour
     public float projectileSpeed = 10.0f; // speed of the projectile
     public float projectileLifetime = 2.0f; // how long the projectile will exist before being destroyed
     public float aimDuration = 0.5f; // how long it takes to aim at the player
-    public float shootingRange = 30f; // how long it takes to aim at the player
+    public float predictionTimeAdjust = 0.7f; // value that is added to predictedTime
+    public float shootingRange = 30f;
 
-    private Transform player; // reference to the player
+    private Rigidbody player; // reference to the player
     private Animator animator; // reference to the animator component
     private float nextFireTime; // time of the next shot
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
 
         ChangeTags(transform);
@@ -53,9 +54,14 @@ public class EnemyShoot : MonoBehaviour
     IEnumerator AimAtPlayerSmoothly()
     {
         Quaternion originalRotation = transform.rotation;
-        Vector3 targetDirection = player.position - transform.position;
-        targetDirection.y = 0.0f;
+        float distance = Vector3.Distance(player.position, transform.position);
+        float predictionTime = aimDuration + distance / projectileSpeed + predictionTimeAdjust;
+        Vector3 predictedPlayerPosition = player.position + player.velocity * predictionTime;
+        Vector3 targetDirection = predictedPlayerPosition - transform.position;
+        targetDirection.y = 0;
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+
+        Debug.Log("player distance: " + distance + " predicted player position: " + predictedPlayerPosition + " prediction time: " + predictionTime);
 
         float elapsedTime = 0.0f;
         while (elapsedTime < aimDuration)
