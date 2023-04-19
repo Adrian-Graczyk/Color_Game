@@ -127,7 +127,17 @@ public class PlayerMovement : MonoBehaviour
            Slide();
         }
 
+        if (OnSlope())
+        {
             slopeMoveDirection = Vector3.ProjectOnPlane(moveDirection, slopeHit.normal);
+            rb.AddForce(slopeMoveDirection.normalized * moveSpeed * movementMultiplier * Time.deltaTime, ForceMode.Force);
+        }
+        else
+        {
+            slopeMoveDirection = moveDirection;
+            rb.AddForce(slopeMoveDirection.normalized * moveSpeed * movementMultiplier * Time.deltaTime, ForceMode.Force);
+        }
+        
     }
 
     void MyInput()
@@ -223,10 +233,10 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
         }
-        else if (isGrounded && OnSlope())
-        {
-            rb.AddForce(slopeMoveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
-        }
+        //else if (isGrounded && OnSlope())
+        //{
+        //    rb.AddForce(slopeMoveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
+       // }
         else if (!isGrounded)
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier * airMultiplier, ForceMode.Acceleration);

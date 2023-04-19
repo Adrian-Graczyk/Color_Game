@@ -5,6 +5,7 @@ using UnityEngine;
 public class Dash : MonoBehaviour
 {
     [SerializeField] private Transform orientation;
+    [SerializeField] private PlayerMovement playerMovement;
 
     public float dashForce = 5f; // force of dash
     public float dashTime = 0.2f; // duration of dash
@@ -24,7 +25,7 @@ public class Dash : MonoBehaviour
 
     void Update()
     {
-        if (canDash)
+        if (canDash && playerMovement.isGrounded)
         {
             // check for double-click
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
