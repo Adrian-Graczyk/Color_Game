@@ -366,6 +366,12 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!1 &111580420 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2188371979383974405, guid: 94aa53ee1c76bd244a258541d47031ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 2591333431564336549}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &123860748
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,7 +481,6 @@ GameObject:
   - component: {fileID: 137176463}
   - component: {fileID: 137176462}
   - component: {fileID: 137176461}
-  - component: {fileID: 137176464}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -562,20 +567,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137176459}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &137176464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 137176459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 065938c34b24ec440943f2eeea1e73ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onBulletPickUp: {fileID: 11400000, guid: 395d3c781bb1a574a8bbb9782ddf96d7, type: 2}
-  pickupRange: 1.5
 --- !u!1 &274892734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1485,6 +1476,7 @@ GameObject:
   - component: {fileID: 950780593}
   - component: {fileID: 950780594}
   - component: {fileID: 950780595}
+  - component: {fileID: 950780597}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1616,7 +1608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orientation: {fileID: 1751018335}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 950780590}
   dashForce: 15
   dashTime: 0.2
   dashCooldownTime: 3
@@ -1633,6 +1625,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCollider: {fileID: 137176461}
+--- !u!114 &950780597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950780588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 065938c34b24ec440943f2eeea1e73ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupRange: 1.5
+  bulletLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  pickupCollider: {fileID: 2089037565}
+  bulletPickupKey: 102
+  onBulletPickUp: {fileID: 11400000, guid: 395d3c781bb1a574a8bbb9782ddf96d7, type: 2}
 --- !u!4 &998488634 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2188371979446504704, guid: 94aa53ee1c76bd244a258541d47031ff,
@@ -2407,6 +2418,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2053246306}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2089037560 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2188371980782940122, guid: 94aa53ee1c76bd244a258541d47031ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 2591333431564336549}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2089037565
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089037560}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.4, z: 2}
+  m_Center: {x: 0, y: 0, z: 1.2}
 --- !u!1001 &2591333431564336549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2418,6 +2448,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 950780588}
+    - target: {fileID: 1930226659, guid: 94aa53ee1c76bd244a258541d47031ff, type: 3}
+      propertyPath: weaponsHolder
+      value: 
+      objectReference: {fileID: 111580420}
     - target: {fileID: 1930226659, guid: 94aa53ee1c76bd244a258541d47031ff, type: 3}
       propertyPath: playerCollider
       value: 
@@ -2486,6 +2520,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Camera Holder
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188371980782940126, guid: 94aa53ee1c76bd244a258541d47031ff,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 3895
       objectReference: {fileID: 0}
     - target: {fileID: 2591333432210474905, guid: 94aa53ee1c76bd244a258541d47031ff,
         type: 3}

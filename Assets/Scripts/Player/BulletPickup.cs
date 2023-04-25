@@ -4,16 +4,33 @@ using UnityEngine;
 
 public class BulletPickup : MonoBehaviour
 {
+    public float pickupRange = 1.5f;
+    public LayerMask bulletLayer;
+    public BoxCollider pickupCollider;
+
+    public KeyCode bulletPickupKey = KeyCode.Mouse1;
 
     [Header("Events")]
     public GameEvent onBulletPickUp;
 
-    public float pickupRange = 1.5f;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(bulletPickupKey))
         {
+            // Collider[] colliders = Physics.OverlapBox(pickupCollider.transform.position,
+            //                                           pickupCollider.bounds.size,
+            //                                           pickupCollider.transform.rotation,
+            //                                           bulletLayer);
+            // Debug.Log("Colliders: " + colliders.Length);
+
+            // foreach (Collider collider in colliders)
+            // {
+            //     Debug.Log("Bullet in pickup range");
+            //     onBulletPickUp.Raise(this, collider.GetComponent<Renderer>().sharedMaterial);
+            //     Destroy(collider.gameObject);
+            // }
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
             if (Physics.Raycast(ray, out hitInfo))

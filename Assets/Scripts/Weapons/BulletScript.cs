@@ -10,11 +10,16 @@ public class BulletScript : MonoBehaviour
     [SerializeField]
     GameObject bulletPrefab;
 
+    [SerializeField]
+    SphereCollider pickupCollider;
+
 
     private bool isStick = false;
     private GameObject target;
     private Vector3 refPos;
     private SphereCollider sphereCollider;
+    
+    
 
 
     void Start()
@@ -22,6 +27,13 @@ public class BulletScript : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         if(!gameObject.CompareTag("EnemyBullet"))
         Physics.IgnoreCollision(GetComponent<Collider>(), GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Collider>(), true);
+        
+        if (pickupCollider != null) {
+            foreach (Collider otherCollider in FindObjectsOfType<Collider>())
+            {
+                Physics.IgnoreCollision(pickupCollider, otherCollider, true);
+            }
+        }
     }
 
     // Update is called once per frame
