@@ -11,6 +11,7 @@ TagManager:
   - Blade
   - EnemyBullet
   - EnemyBody
+  - Throwable
   layers:
   - Default
   - TransparentFX

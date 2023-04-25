@@ -21,7 +21,7 @@ public class HitScript : MonoBehaviour
         Debug.Log("tag: " + otherCollider.tag + " name: " + otherMaterial.name + " expected: " + material.name);
 
 
-        if ((otherCollider.CompareTag("Bullet") || otherCollider.CompareTag("Blade")) && otherMaterial.name == material.name && thisCollider.CompareTag("Enemy"))
+        if ((otherCollider.CompareTag("Bullet") || otherCollider.CompareTag("Blade") || otherCollider.CompareTag("Throwable")) && otherMaterial.name == material.name && thisCollider.CompareTag("Enemy"))
         {
             collision.contacts[0].thisCollider.GetComponent<Renderer>().material.color = Color.white;
         }

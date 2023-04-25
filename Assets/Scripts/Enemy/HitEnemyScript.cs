@@ -20,9 +20,10 @@ public class HitEnemyScript : MonoBehaviour
 
         Debug.Log("tag: " + otherCollider.tag + " name: " + otherMaterial.name + " expected: " + material.name);
 
-        if ((otherCollider.CompareTag("Bullet") || otherCollider.CompareTag("Blade")))
+        if ((otherCollider.CompareTag("Bullet") || otherCollider.CompareTag("Blade") | otherCollider.CompareTag("Throwable")))
         {
             Debug.Log("Tag is matching Bullet or Blade");
+            if (otherMaterial.name == material.name)
             GetComponentInChildren<Renderer>().material.color = Color.white;
         }
     }
