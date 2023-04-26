@@ -12,40 +12,54 @@ public class GunScript : MonoBehaviour
     GameObject bulletPoint;
     [SerializeField]
     float bulletSpeed;
-
+    [SerializeField]
+    int maxAmmo = 5;
     
-
+    private int currentAmmo;
     private Material bulletMaterial;
+    private Material gunMaterial;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         //input = transform.root.GetComponent<StarterAssetsInputs>();
-         bulletMaterial = bulletPrefab.GetComponent<Renderer>().sharedMaterial;
+        bulletMaterial = bulletPrefab.GetComponent<Renderer>().sharedMaterial;
+        gunMaterial = GetComponent<Renderer>().material;
+        gunMaterial.SetColor("_EmissionColor", bulletMaterial.GetColor("_Color"));
+        currentAmmo = maxAmmo;
         //bulletSpeed = GetComponent<float>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-       if (Input.GetKeyDown(KeyCode.Mouse0))
-       {
-         Shoot();
-       }
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Shoot();
+        }
     }
 
     void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab, bulletPoint.transform.position, transform.rotation);
-        bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
-        bullet.GetComponent<Renderer>().sharedMaterial = bulletMaterial;
+        Debug.Log("CurrentAmmo: " + currentAmmo);
+
+        if (currentAmmo > 0)
+        {
+            currentAmmo -= 1;
+            GameObject bullet = Instantiate(bulletPrefab, bulletPoint.transform.position, transform.rotation);
+            bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
+            bullet.GetComponent<Renderer>().sharedMaterial = bulletMaterial;
+        }
     }
 
     public void onBulletPickUp(Component sender, object data) {
         Debug.Log("onBulletPickUp event received with data: " + data);
 
+        currentAmmo = Mathf.Min(currentAmmo + 1, maxAmmo);
+
         if (data is Material) {
-            bulletMaterial = (Material) data;
+            Material material = (Material) data;
+            bulletMaterial = material;
+            gunMaterial.SetColor("_EmissionColor", material.GetColor("_Color"));
         }
     }
 }

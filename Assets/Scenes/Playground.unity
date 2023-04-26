@@ -1637,7 +1637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 065938c34b24ec440943f2eeea1e73ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupRange: 1.5
+  pickupRange: 3
   bulletLayer:
     serializedVersion: 2
     m_Bits: 2048
@@ -2030,7 +2030,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8c834da2964419245b771b10b8d17ab7, type: 2}
+  - {fileID: 2100000, guid: 57c0956ebd0ffe648b3d35d046188946, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
