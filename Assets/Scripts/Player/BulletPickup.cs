@@ -18,19 +18,6 @@ public class BulletPickup : MonoBehaviour
     {
         if (Input.GetKeyDown(bulletPickupKey))
         {
-            // Collider[] colliders = Physics.OverlapBox(pickupCollider.transform.position,
-            //                                           pickupCollider.bounds.size,
-            //                                           pickupCollider.transform.rotation,
-            //                                           bulletLayer);
-            // Debug.Log("Colliders: " + colliders.Length);
-
-            // foreach (Collider collider in colliders)
-            // {
-            //     Debug.Log("Bullet in pickup range");
-            //     onBulletPickUp.Raise(this, collider.GetComponent<Renderer>().sharedMaterial);
-            //     Destroy(collider.gameObject);
-            // }
-
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
             if (Physics.Raycast(ray, out hitInfo))

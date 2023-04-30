@@ -12,6 +12,8 @@ public class EnemyShoot : MonoBehaviour
     public float aimDuration = 0.5f; // how long it takes to aim at the player
     public float predictionTimeAdjust = 0.7f; // value that is added to predictedTime
     public float shootingRange = 30f;
+    public float viewRange = 30f;
+    public float viewAngle = 90f;
 
     private Rigidbody player; // reference to the player
     private Animator animator; // reference to the animator component
@@ -27,6 +29,11 @@ public class EnemyShoot : MonoBehaviour
 
     void Update()
     {
+        if (!isPlayerVisible())
+        {
+            return;
+        }
+
         // check if the player is within shooting range and if it's time to shoot again
         if (Vector3.Distance(transform.position, player.position) < shootingRange && Time.time > nextFireTime)
         {
@@ -50,6 +57,8 @@ public class EnemyShoot : MonoBehaviour
             Destroy(projectile, projectileLifetime);
         }
     }
+
+
 
     IEnumerator AimAtPlayerSmoothly()
     {
@@ -81,5 +90,26 @@ public class EnemyShoot : MonoBehaviour
         {
             ChangeTags(child);
         }
+    }
+
+    private bool isPlayerVisible()
+    {
+        if (Vector3.Distance(transform.position, player.position) < viewRange)
+        {
+            Vector3 playerDirection = (player.position - transform.position).normalized;
+            float angleToPlayer = Vector3.Angle(transform.forward, playerDirection);
+
+            if (angleToPlayer < viewAngle / 2)
+            {
+                int layerMask = ~(1 << LayerMask.NameToLayer("Enemy")); // ignore Enemy layer
+                if (Physics.Linecast(transform.position, player.position, out RaycastHit hit, layerMask))
+                {
+                    Debug.Log("Can see: " + hit.collider.tag + " layer: " + hit.collider.gameObject.layer);
+                    return hit.collider.CompareTag("Player");
+                }
+            }
+        }
+
+        return false;
     }
 }

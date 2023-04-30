@@ -20,7 +20,7 @@ TagManager:
   - Water
   - UI
   - FPSLayer
-  - 
+  - Player
   - Ground
   - ColorObject
   - Enemy
