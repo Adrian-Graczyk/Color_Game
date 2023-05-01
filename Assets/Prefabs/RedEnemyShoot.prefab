@@ -2395,10 +2395,12 @@ GameObject:
   - component: {fileID: 7791276896642570600}
   - component: {fileID: 4233385686589981458}
   - component: {fileID: 7758176533265906402}
-  - component: {fileID: 7758176533265906334}
   - component: {fileID: 7758176533265906405}
   - component: {fileID: 7758176533265906403}
   - component: {fileID: 253519583}
+  - component: {fileID: 416888693}
+  - component: {fileID: 416888694}
+  - component: {fileID: 416888703}
   m_Layer: 10
   m_Name: RedEnemyShoot
   m_TagString: Enemy
@@ -2457,29 +2459,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.64886475, y: 1.6227647, z: 1}
   m_Center: {x: 0.031341553, y: 0.94707435, z: 0}
---- !u!114 &7758176533265906334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7452328881205724114}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f46b6227d6567e41b4ca122acda3294, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 2940124070797970742, guid: f026c91952a0efb4ea9cbde04be00bc2,
-    type: 3}
-  projectileSpawnPoint: {fileID: 7758176532652193465}
-  fireRate: 1
-  projectileSpeed: 100
-  projectileLifetime: 2
-  aimDuration: 0.3
-  predictionTimeAdjust: 0.7
-  shootingRange: 30
-  viewRange: 30
-  viewAngle: 90
 --- !u!114 &7758176533265906405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2545,6 +2524,66 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!195 &416888693
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7452328881205724114}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &416888694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7452328881205724114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e198d79fda1212e49b9968aedaaf0e91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navMesh: {fileID: 0}
+  animator: {fileID: 0}
+  pathUpdateDelay: 0.2
+  viewRange: 20
+  shootingRange: 15
+  viewAngle: 90
+  rotationTime: 0.2
+  timeBetweenAttacks: 1
+  projectilePrefab: {fileID: 2940124070797970742, guid: f026c91952a0efb4ea9cbde04be00bc2,
+    type: 3}
+  projectileSpawnPoint: {fileID: 7758176532652193465}
+  projectileSpeed: 100
+  projectileLifetime: 2
+--- !u!114 &416888703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7452328881205724114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 965ce299cdea50a43a4e0ffb70941607, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patrolPath: {fileID: 0}
 --- !u!1 &7624393784143873103
 GameObject:
   m_ObjectHideFlags: 0

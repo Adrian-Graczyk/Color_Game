@@ -9,12 +9,15 @@ public class RagdollScript : MonoBehaviour
     private Animator animator;
     private MonoBehaviour[] otherScripts;
     public bool isDead;
+    private EnemyReferences enemyReferences;
 
     private void Start()
     {
         isDead = false;
         // Get all the rigidbodies of the character
         rigidBodies = GetComponentsInChildren<Rigidbody>();
+
+        enemyReferences = GetComponent<EnemyReferences>();
 
         foreach (Rigidbody rb in rigidBodies)
         {
@@ -70,6 +73,7 @@ public class RagdollScript : MonoBehaviour
         animator.enabled = false;
         isRagdollActive = true;
         isDead = true;
+        enemyReferences.navMesh.SetDestination(transform.position);
     }
 
     private void SetRigidbodyState(bool state)
@@ -85,7 +89,7 @@ public class RagdollScript : MonoBehaviour
         foreach (MonoBehaviour script in otherScripts)
         {
             // Don't disable the current script or the ragdoll script
-            if (script.GetType() == typeof(EnemyShoot))
+            if (script.GetType() == typeof(AiController))
             {
                 script.enabled = !state;
             }

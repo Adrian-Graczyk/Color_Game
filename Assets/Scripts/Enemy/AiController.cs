@@ -1,60 +1,82 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class AiController : MonoBehaviour
 {
-    public Transform target;
-    
-    private float rotationTime = 0.2f;
-    private EnemyReferences enemyReferences;
-    private float shootingDistance;
-    private float pathUpdateDeadline;
+    public PatrolPath? patrolPath;
 
-    void Awake()
-    {
-        enemyReferences = GetComponent<EnemyReferences>();
-    }
+    private EnemyReferences enemyReferences;
+    private StateMachine fsm;
+    private bool hasPatrolPath;
+    private Transform playerTarget;
+
 
     void Start()
     {
-        shootingDistance = enemyReferences.navMesh.stoppingDistance;
+        enemyReferences = GetComponent<EnemyReferences>();
+        fsm = new StateMachine();
+
+        hasPatrolPath = patrolPath != null;
+        playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
+
+        // STATES
+        var idle = new EnemyState_Idle(enemyReferences);
+        var patrol = new EnemyState_Patrol(enemyReferences, patrolPath);
+        var chase = new EnemyState_Chase(enemyReferences, playerTarget);
+        var attack = new EnemyState_Attack(enemyReferences, playerTarget);
+
+        // TRANSITIONS
+        At(idle, patrol, () => hasPatrolPath && !isTargetInSight(playerTarget));
+        At(idle, chase, () => isTargetInSight(playerTarget));
+        At(idle, attack, () => isTargetInShootingRange(playerTarget) && isTargetInSight(playerTarget));
+        At(patrol, chase, () => isTargetInSight(playerTarget));
+        At(chase, attack, () => isTargetInShootingRange(playerTarget) && isTargetInSight(playerTarget));
+        At(attack, chase, () => !isTargetInShootingRange(playerTarget) && !isTargetInSight(playerTarget));
+        At(attack, idle, () => !isTargetInShootingRange(playerTarget) && !isTargetInSight(playerTarget));
+
+        // START STATE
+        fsm.SetState(idle);
+
+        // FUNCTIONS & CONDITIONS
+        void At(IState from, IState to, Func<bool> condititon) => fsm.AddTransition(from, to, condititon);
+        void Any(IState to, Func<bool> condititon) => fsm.AddAnyTransition(to, condititon);
     }
 
-    
     void Update()
     {
-        if (target != null)
+        fsm.Tick();
+    }
+
+    private void OnDrawGizmos() {
+        if (fsm != null) {
+            Gizmos.color = fsm.GetGizmoColor();
+            Gizmos.DrawSphere(transform.position + Vector3.up * 3, 0.4f);
+        }
+    }
+
+    private bool isTargetInSight(Transform target) {
+       if (Vector3.Distance(enemyReferences.transform.position, target.position) < enemyReferences.viewRange)
         {
-            bool inRange = Vector3.Distance(transform.position, target.position) <= shootingDistance;
-            Debug.Log("Target distance: " + Vector3.Distance(transform.position, target.position));
-            
-            if (inRange) {
-                LookAtTarget();
-            } else {
-                UpdatePath();
+            Vector3 targetDirection = (target.position - enemyReferences.transform.position).normalized;
+            float angleTotarget = Vector3.Angle(enemyReferences.transform.forward, targetDirection);
+
+            if (angleTotarget < enemyReferences.viewAngle / 2)
+            {
+                int layerMask = ~(1 << LayerMask.NameToLayer("Enemy")); // ignore Enemy layer
+                if (Physics.Linecast(enemyReferences.transform.position, target.position, out RaycastHit hit, layerMask))
+                {
+                    Debug.Log("Can see: " + hit.collider.tag + " layer: " + hit.collider.gameObject.layer);
+                    return hit.collider.CompareTag("Player");
+                }
             }
-
-            enemyReferences.animator.SetBool("Shoot", inRange);
-            enemyReferences.animator.SetBool("Walk", !inRange);
         }
+
+        return false;
     }
 
-    private void LookAtTarget()
-    {
-        Vector3 lookPos = target.position - transform.position;
-        lookPos.y = 0;
-        Quaternion rotation = Quaternion.LookRotation(lookPos);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationTime);
-    }
-
-    private void UpdatePath()
-    {
-        if (Time.time >= pathUpdateDeadline)
-        {
-            Debug.Log("Updating path");
-            pathUpdateDeadline = Time.time + enemyReferences.pathUpdateDelay;
-            enemyReferences.navMesh.SetDestination(target.position);
-        }
+    private bool isTargetInShootingRange(Transform target) {
+        return Vector3.Distance(target.position, enemyReferences.transform.position) < enemyReferences.shootingRange;
     }
 }
