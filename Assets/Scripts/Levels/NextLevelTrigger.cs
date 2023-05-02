@@ -7,8 +7,10 @@ public class NextLevelTrigger : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
+        int enemiesAlive = 0;
         if (other.CompareTag("Player"))
         {
+            Debug.Log("NextLevelTrigger");
             Scene thisScene = SceneManager.GetActiveScene();
 
             GameObject[] objectsOnScene = thisScene.GetRootGameObjects();

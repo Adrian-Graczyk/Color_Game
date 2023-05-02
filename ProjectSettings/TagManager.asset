@@ -12,6 +12,7 @@ TagManager:
   - EnemyBullet
   - EnemyBody
   - Throwable
+  - KeyCard
   layers:
   - Default
   - TransparentFX
