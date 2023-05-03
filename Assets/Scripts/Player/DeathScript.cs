@@ -13,4 +13,10 @@ public class DeathScript : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.CompareTag("EnemyBlade")) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
 }
