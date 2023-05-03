@@ -16,6 +16,7 @@ public class EnemyReferences : MonoBehaviour
     public float viewAngle = 90;
     public float rotationTime = 0.2f;
     public float timeBetweenAttacks = 1.0f;
+    public float detectionTime = 5.0f;
 
     [Header("Gun projectiles")]
     public GameObject projectilePrefab;

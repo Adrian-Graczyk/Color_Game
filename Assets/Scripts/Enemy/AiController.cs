@@ -6,6 +6,7 @@ using System;
 public class AiController : MonoBehaviour
 {
     public PatrolPath? patrolPath;
+    public bool enableDetection = false;
 
     private EnemyReferences enemyReferences;
     private StateMachine fsm;
@@ -24,14 +25,19 @@ public class AiController : MonoBehaviour
         // STATES
         var idle = new EnemyState_Idle(enemyReferences);
         var patrol = new EnemyState_Patrol(enemyReferences, patrolPath);
+        var detect = new EnemyState_Detect(enemyReferences, playerTarget);
         var chase = new EnemyState_Chase(enemyReferences, playerTarget);
         var attack = new EnemyState_Attack(enemyReferences, playerTarget);
 
         // TRANSITIONS
         At(idle, patrol, () => hasPatrolPath && !isTargetInSight(playerTarget));
-        At(idle, chase, () => isTargetInSight(playerTarget));
-        At(idle, attack, () => isTargetInShootingRange(playerTarget) && isTargetInSight(playerTarget));
-        At(patrol, chase, () => isTargetInSight(playerTarget));
+        At(idle, detect, () => enableDetection && isTargetInSight(playerTarget));
+        At(idle, chase, () => !enableDetection && isTargetInSight(playerTarget));
+        At(idle, attack, () => !enableDetection && isTargetInShootingRange(playerTarget) && isTargetInSight(playerTarget));
+        At(patrol, chase, () => !enableDetection && isTargetInSight(playerTarget));
+        At(patrol, detect, () => enableDetection && isTargetInSight(playerTarget));
+        At(detect, chase, () => detect.TargetDetected());
+        At(detect, idle, () => !isTargetInSight(playerTarget));
         At(chase, attack, () => isTargetInShootingRange(playerTarget) && isTargetInSight(playerTarget));
         At(attack, chase, () => !isTargetInShootingRange(playerTarget) && !isTargetInSight(playerTarget));
         At(attack, idle, () => !isTargetInShootingRange(playerTarget) && !isTargetInSight(playerTarget));

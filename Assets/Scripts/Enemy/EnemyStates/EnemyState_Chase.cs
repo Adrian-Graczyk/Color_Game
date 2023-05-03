@@ -6,6 +6,7 @@ public class EnemyState_Chase : IState
 {
     private EnemyReferences enemyReferences;
     private Transform target;
+    private float pathUpdateDeadline;
 
     public EnemyState_Chase(EnemyReferences enemyReferences, Transform target) {
         this.enemyReferences = enemyReferences;
@@ -21,7 +22,10 @@ public class EnemyState_Chase : IState
     }
 
     public void Tick() {
-        enemyReferences.navMesh.SetDestination(target.position);
+        if (enemyReferences.pathUpdateDelay <= Time.time) {
+            pathUpdateDeadline = Time.time + enemyReferences.pathUpdateDelay;
+            enemyReferences.navMesh.SetDestination(target.position);
+        }
     }
 
     public Color GizmoColor() {

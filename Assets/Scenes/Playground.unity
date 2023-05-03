@@ -1378,6 +1378,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 416888694, guid: c7cbcb6944a8695439858fe9559fd6b7, type: 3}
+      propertyPath: detectionTime
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 416888703, guid: c7cbcb6944a8695439858fe9559fd6b7, type: 3}
       propertyPath: canMove
       value: 1
@@ -1386,6 +1390,10 @@ PrefabInstance:
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 409864158}
+    - target: {fileID: 416888703, guid: c7cbcb6944a8695439858fe9559fd6b7, type: 3}
+      propertyPath: enableDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7452328881205724114, guid: c7cbcb6944a8695439858fe9559fd6b7,
         type: 3}
       propertyPath: m_Name
@@ -2758,10 +2766,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera Holder
       objectReference: {fileID: 0}
+    - target: {fileID: 2188371980782940120, guid: 94aa53ee1c76bd244a258541d47031ff,
+        type: 3}
+      propertyPath: m_CameraType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188371980782940126, guid: 94aa53ee1c76bd244a258541d47031ff,
+        type: 3}
+      propertyPath: m_FocalLength
+      value: 32.96973
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188371980782940126, guid: 94aa53ee1c76bd244a258541d47031ff,
+        type: 3}
+      propertyPath: m_OcclusionCulling
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2188371980782940126, guid: 94aa53ee1c76bd244a258541d47031ff,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 3895
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188371980782940126, guid: 94aa53ee1c76bd244a258541d47031ff,
+        type: 3}
+      propertyPath: m_projectionMatrixMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2591333432210474905, guid: 94aa53ee1c76bd244a258541d47031ff,
         type: 3}
