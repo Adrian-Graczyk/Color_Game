@@ -15,6 +15,7 @@ TagManager:
   - KeyCard
   - Fire
   - EnemyBlade
+  - Ladder
   layers:
   - Default
   - TransparentFX
