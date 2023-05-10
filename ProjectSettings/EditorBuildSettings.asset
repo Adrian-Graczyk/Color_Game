@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rooftops.unity
     guid: 35e2be1f8984b87488dcff96ce1574ce
+  - enabled: 1
+    path: Assets/Scenes/Hangar.unity
+    guid: 2771fa173c84ab74c95c90a6f1beb88f
   m_configObjects: {}
