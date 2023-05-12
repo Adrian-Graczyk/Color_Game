@@ -1,1 +1,42 @@
-mission 2
+Egzekutor: "Kapitanie, czemu w systemie wizyjnym widzę także przedmioty w kolorze?"
+
+Kapitan: "Sam nie do końca to rozumiem. Nie jestem technikiem. Z tego co wiem może to być jakoś związane z śladem genetycznym pozostawionym przez ludzi z przepalonym implantem na tych przedmiotach. Jednocześnie mogą to być jakieś błędy systemu. Jest to nadal prototypowa technologia, pamiętaj o tym. 
+Zamiast zaprzątać sobie tym jednak głowę, wykorzystaj to aby odpowiednio dostosować tryb resetu implantu w twojej broni. Twoja broń automatycznie powinna pobierać potrzebne dane z przedmiotu w danym kolorze przy fizycznym kontakcie. Możesz także podnieść przedmiot, naładować go ładunkiem i cisnąć w przeciwnika, to też powinno zadziałać."
+
+Egzekutor: "Dziękuje za informacje kapitanie"
+
+Kapitan: "I pamiętaj…."
+
+
+
+
+Egzekutor: "Halo, kapitanie?"
+
+Liderka ruchu oporu: "Witaj, egzekutorze (pff, sam to wymyśliłeś?). Mam pewnie tylko chwilę, więc będę się streszczać. Partia, której służysz, to organizacja pełna sekretów i kłamstw. A my możemy cię uwolnić od tej kontroli, jaką nad tobą wywierają."
+
+Egzekutor: "Nie jestem kontrolowany, jestem lojalny, a moja lojalność należy tylko i wyłącznie do partii. Nie przekonasz mnie do zdrady, wiec możesz dać sobie spokój z próbowaniem. Hmm, kim ty w ogóle jesteś?"
+
+Liderka ruchu oporu: "Jestem tą, którą masz za zadanie odnaleźć i zakładam że zamordować, ale to nie jest istotne w tym momencie. Naprawdę nie widzisz, że jesteś narzędziem w rękach innych? Czy naprawdę nie zastanawiałeś się, co tak naprawdę się dzieje w partii?"
+
+Egzekutor: "Nie jest to moja rola, aby zadawać pytania. Jestem po to, aby wykonywać rozkazy."
+
+Liderka ruchu oporu: "Nie musi to tak wyglądać. Mogę ci pomóc. Mogę przekazać ci informacje o tym, co tak naprawdę dzieje się w partii. Zobaczysz, że to nie jest to, na co.."
+
+Egzekutor: "..Spierdalaj"
+
+
+Egzekutor: "Kapitanie, słyszysz mnie?"
+
+Kapitan: "Teraz tak, co się stało?" 
+
+Egzekutor: "Liderka ruchu oporu shakowała nasze łącza."
+
+Kapitan: "Czego od ciebie chciała?" 
+
+Egzekutor: "Próbowała mnie przekonać do porzucenia misji, przerwałem połączenie zanim zaczęła się rozgadywać"
+
+Kapitan: "W takim razie następnym razem, posłuchaj co ma do powiedzenia. Może się to nam przydać. Spróbujemy także zdobyć jej lokalizację w trakcie następnej rozmowy. Przeciągnij to najdłużej jak możesz, jeśli będziesz miał okazję"
+
+Egzekutor: "Dobrze, kapitanie"
+
+Kapitan: "A teraz idź i zresetuj następną grupę rebeliantów, która przejęła dachy w mieście. Michel bez odbioru."

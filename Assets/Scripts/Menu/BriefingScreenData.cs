@@ -9,6 +9,7 @@ using UnityEditor;
 public class BriefingScreenData : ScriptableObject {
     public Texture2D missionThumbnail;
     public Texture2D captainThumbnail;
+    public Texture2D rebelThumbnail;
     public TextAsset missionDescription;
     public SceneAsset scene;
 }

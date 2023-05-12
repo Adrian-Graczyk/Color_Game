@@ -10,6 +10,7 @@ public class MissionBriefing : MonoBehaviour
     public BriefingScreenData briefingScreenData;
     public TextMeshProUGUI description;
     public Image captainImage;
+    public Image rebelImage;
     public Image missionImage;
 
     public void Start() {
@@ -28,6 +29,7 @@ public class MissionBriefing : MonoBehaviour
     private void loadScreenData() {
         description.text = briefingScreenData.missionDescription.text;
         captainImage.sprite = createSprite(briefingScreenData.captainThumbnail);
+        rebelImage.sprite = createSprite(briefingScreenData.rebelThumbnail);
         missionImage.sprite = createSprite(briefingScreenData.missionThumbnail);
     }
 

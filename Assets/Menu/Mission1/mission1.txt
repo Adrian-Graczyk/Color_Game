@@ -1,1 +1,11 @@
-MIssion descriptiom, fun mission, leave none alive, wololololooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocasccsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssMIssion descriptiom, fun mission, leave none alive, wololololooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocasccsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+Egzekutor: "Raportuję, kapitanie. Jestem gotów do wykonania zadania."
+Kapitan: "Dobrze, egzekutorze. Twoim zadaniem jest stłumienie rebelii i zaprzestanie atakom terrorystycznym w mieście. Znajdziesz grupę liderów i wyeliminujesz ich. 
+W twoim hełmie znajduję się prototypowe rozwiązanie pozwalające na wykrywanie niedziałających implantów. 
+Ludzie z takimi implantami będą widoczni w twoim systemie wizyjnym w różnych jaskrawych kolorach, w zależności od emocji, które przyczyniły się do zniszczenia implantu. Na początku te nowe bodźce mogą być to dla ciebie przytłaczające, ale spokojnie, przyzwyczaisz się.
+Egzekutor: "Zrozumiałem, kapitanie. Czy mam pozwolenie na używanie broni palnej?
+Kapitan: "Tak, ale słuchaj uważnie. Tym razem twój cel to resetowanie implantów, a nie zabijanie ludzi. Przygotowaliśmy i wyposażyliśmy cię w broń, która na to pozwala. Wystarczy że trafisz nią rebelianta chociaż raz, a przekażesz mu impuls który przywróci go stanu przydatności Partii. Reset implantu powoduję kilkugodzinne omdlenie, więc nie musisz się przejmować co zrobić z trafionymi osobami"
+Egzekutor: "Przyjąłem. Będę działał zgodnie z zasadami."
+Kapitan: "Dobrze. Nie możemy pozwolić sobie na niepotrzebne straty ludzkie. Pamiętaj, że rosnące niepokoje społeczne są niepożądane przez partie i wymaga to od nas większej ostrożności. 
+Oczywiście nie tyczy się to przywódców rebelii. W tym przypadku nie możemy podjąć żadnego ryzyka. Rebelianci stają się na tyle bezczelni, że zaatakowali jedną z naszych placówek. Musisz ją odbić."
+Egzekutor: "Oczywiście , kapitanie. Nie zawiodę."
+Kapitan: "Nie mam co do tego wątpliwości. Zawsze byłeś niezwykle skuteczny w swoich zadaniach. Michel bez odbioru" 

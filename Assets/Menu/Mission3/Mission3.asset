@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a68dded5cd5bcc4ab7c8a87f5226138, type: 3}
-  m_Name: Mission1
+  m_Name: Mission3
   m_EditorClassIdentifier: 
-  missionThumbnail: {fileID: 2800000, guid: bf65a4f73e80d4145ba2d5ecb0bf88ff, type: 3}
+  missionThumbnail: {fileID: 2800000, guid: 0e7e85ced325379458057993f0389374, type: 3}
   captainThumbnail: {fileID: 2800000, guid: 0147c23d94a01284cbd570ab46e31bdb, type: 3}
-  rebelThumbnail: {fileID: 2800000, guid: e4590e66f102b7241983370ca2cae273, type: 3}
-  missionDescription: {fileID: 4900000, guid: 57fd780e2a71abd4da72613a5fd29bb7, type: 3}
-  scene: {fileID: 102900000, guid: 575a1fb3f17281147894e02a8a64cf42, type: 3}
+  rebelThumbnail: {fileID: 2800000, guid: 07f74b1451770dd4a9dad455bcc57072, type: 3}
+  missionDescription: {fileID: 4900000, guid: be648258241fedf42acf5bd382e4884d, type: 3}
+  scene: {fileID: 102900000, guid: 3c5cd3c74572a7e45b501107a6388dea, type: 3}

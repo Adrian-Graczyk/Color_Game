@@ -15,8 +15,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Playground 1.unity
     guid: 826a4ce8d6b31434daa2e25d5d3f21e2
   - enabled: 1
+    path: Assets/Scenes/Corridors.unity
+    guid: 575a1fb3f17281147894e02a8a64cf42
+  - enabled: 1
     path: Assets/Scenes/Rooftops.unity
     guid: 35e2be1f8984b87488dcff96ce1574ce
+  - enabled: 1
+    path: Assets/Scenes/Tower.unity
+    guid: 3c5cd3c74572a7e45b501107a6388dea
   - enabled: 1
     path: Assets/Scenes/Hangar.unity
     guid: 2771fa173c84ab74c95c90a6f1beb88f
