@@ -26,7 +26,7 @@ public class HitScript : MonoBehaviour
             collision.contacts[0].thisCollider.GetComponent<Renderer>().material.color = Color.white;
         }
         
-        if(thisCollider.CompareTag("ColorObject") && otherCollider.CompareTag("Blade"))
+        if((thisCollider.CompareTag("ColorObject") || thisCollider.CompareTag("Throwable")) && otherCollider.CompareTag("Blade"))
         { 
             collision.contacts[0].otherCollider.GetComponent<Renderer>().material = material;
         }

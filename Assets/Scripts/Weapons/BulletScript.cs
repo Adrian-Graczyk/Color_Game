@@ -72,7 +72,7 @@ public class BulletScript : MonoBehaviour
 
         // Check if the collided object has a Renderer component
         Renderer otherRenderer = other.GetComponent<Renderer>();
-        if (otherRenderer && other.CompareTag("ColorObject"))
+        if (otherRenderer && (other.CompareTag("ColorObject") || other.CompareTag("Throwable")))
         {
             renderer.material = otherRenderer.sharedMaterial;
         }
