@@ -17,6 +17,7 @@ public class EnemyState_Attack : IState
         target = GameObject.FindGameObjectWithTag("Player").transform;
         enemyReferences.animator.SetBool("Attack", true);
         enemyReferences.navMesh.SetDestination(enemyReferences.transform.position);
+        alarmEnemies();
     }
 
     public void OnExit() {
@@ -29,7 +30,7 @@ public class EnemyState_Attack : IState
         Quaternion rotation = Quaternion.LookRotation(lookPos);
         enemyReferences.transform.rotation = Quaternion.Slerp(enemyReferences.transform.rotation, rotation, enemyReferences.rotationTime);
 
-        if (Time.time > nextFireTime)
+        if (Time.time > nextFireTime && enemyReferences.projectileSpawnPoint != null)
         {
             nextFireTime = Time.time + enemyReferences.timeBetweenAttacks;
 
@@ -42,5 +43,11 @@ public class EnemyState_Attack : IState
 
     public Color GizmoColor() {
         return Color.red;
+    }
+
+    private void alarmEnemies() {
+        if (enemyReferences.enemyAlarmArea != null) {
+            enemyReferences.enemyAlarmArea.alarmEnemies();
+        }
     }
 }

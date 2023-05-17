@@ -18,6 +18,9 @@ public class EnemyReferences : MonoBehaviour
     public float timeBetweenAttacks = 1.0f;
     public float detectionTime = 5.0f;
 
+    [Header("EnemyAlarmArea")]
+    public EnemyAlarmArea? enemyAlarmArea;
+
     [Header("Gun projectiles")]
     public GameObject projectilePrefab;
     public Transform projectileSpawnPoint;

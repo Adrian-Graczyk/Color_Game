@@ -12,6 +12,7 @@ public class AiController : MonoBehaviour
     private StateMachine fsm;
     private bool hasPatrolPath;
     private Transform playerTarget;
+    private bool alarmed = false;
 
 
     void Start()
@@ -32,9 +33,9 @@ public class AiController : MonoBehaviour
         // TRANSITIONS
         At(idle, patrol, () => hasPatrolPath && !isTargetInSight(playerTarget));
         At(idle, detect, () => enableDetection && isTargetInSight(playerTarget));
-        At(idle, chase, () => !enableDetection && isTargetInSight(playerTarget));
+        At(idle, chase, () => (!enableDetection && isTargetInSight(playerTarget)) || alarmed);
         At(idle, attack, () => !enableDetection && isTargetInShootingRange(playerTarget) && isTargetInSight(playerTarget));
-        At(patrol, chase, () => !enableDetection && isTargetInSight(playerTarget));
+        At(patrol, chase, () => (!enableDetection && isTargetInSight(playerTarget)) || alarmed);
         At(patrol, detect, () => enableDetection && isTargetInSight(playerTarget));
         At(detect, chase, () => detect.TargetDetected());
         At(detect, idle, () => !isTargetInSight(playerTarget));
@@ -55,11 +56,21 @@ public class AiController : MonoBehaviour
         fsm.Tick();
     }
 
+    public void alarm() {
+        alarmed = true;
+    }
+
     private void OnDrawGizmos() {
         if (fsm != null) {
             Gizmos.color = fsm.GetGizmoColor();
             Gizmos.DrawSphere(transform.position + Vector3.up * 3, 0.4f);
             // Gizmos.DrawSphere(transform.position + Vector3.up, 0.1f);  // Linecast source
+
+            if (enemyReferences.enemyAlarmArea != null) {
+                Vector3 position = enemyReferences.enemyAlarmArea.transform.position;
+                Vector3 dimensions = enemyReferences.enemyAlarmArea.boxSize;
+                Gizmos.DrawWireCube(position, dimensions);
+            }
         }
     }
 
