@@ -2567,6 +2567,7 @@ MonoBehaviour:
   rotationTime: 0.2
   timeBetweenAttacks: 1
   detectionTime: 5
+  enemyAlarmArea: {fileID: 0}
   projectilePrefab: {fileID: 2940124070797970742, guid: f026c91952a0efb4ea9cbde04be00bc2,
     type: 3}
   projectileSpawnPoint: {fileID: 0}

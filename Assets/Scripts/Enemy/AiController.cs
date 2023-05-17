@@ -59,6 +59,7 @@ public class AiController : MonoBehaviour
         if (fsm != null) {
             Gizmos.color = fsm.GetGizmoColor();
             Gizmos.DrawSphere(transform.position + Vector3.up * 3, 0.4f);
+            // Gizmos.DrawSphere(transform.position + Vector3.up, 0.1f);  // Linecast source
         }
     }
 
@@ -71,7 +72,7 @@ public class AiController : MonoBehaviour
             if (angleTotarget < enemyReferences.viewAngle / 2)
             {
                 int layerMask = ~(1 << LayerMask.NameToLayer("Enemy")); // ignore Enemy layer
-                if (Physics.Linecast(enemyReferences.transform.position, target.position, out RaycastHit hit, layerMask))
+                if (Physics.Linecast(enemyReferences.transform.position + Vector3.up, target.position, out RaycastHit hit, layerMask))
                 {
                     Debug.Log("Can see: " + hit.collider.tag + " layer: " + hit.collider.gameObject.layer);
                     return hit.collider.CompareTag("Player");
