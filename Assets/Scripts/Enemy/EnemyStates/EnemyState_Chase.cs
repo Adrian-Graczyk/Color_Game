@@ -15,6 +15,7 @@ public class EnemyState_Chase : IState
 
     public void OnEnter() {
         enemyReferences.animator.SetBool("Chase", true);
+        alarmEnemies();
     }
 
     public void OnExit() {
@@ -30,5 +31,11 @@ public class EnemyState_Chase : IState
 
     public Color GizmoColor() {
         return Color.yellow;
+    }
+
+    private void alarmEnemies() {
+        if (enemyReferences.enemyAlarmArea != null) {
+           enemyReferences.enemyAlarmArea.alarmEnemies();
+        }
     }
 }
