@@ -73,6 +73,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1911162835729447247}
   - component: {fileID: 3108874520677439405}
+  - component: {fileID: 5362656553173468935}
+  - component: {fileID: 722028676658032775}
   m_Layer: 10
   m_Name: Ch36
   m_TagString: Enemy
@@ -200,6 +202,32 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.000019550323, y: -0.17025155, z: 0.020068273}
     m_Extent: {x: 0.89567715, y: 0.94187397, z: 0.24064814}
   m_DirtyAABB: 0
+--- !u!65 &5362656553173468935
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504200420237346263}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: -0.5, z: 2}
+  m_Center: {x: 0.000017046928, y: 0.5, z: 0.017086446}
+--- !u!114 &722028676658032775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504200420237346263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 572c7f8097e96a24cb7b68cd9bc25aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onBulletPickUp: {fileID: 11400000, guid: 395d3c781bb1a574a8bbb9782ddf96d7, type: 2}
 --- !u!1 &529575726528708781
 GameObject:
   m_ObjectHideFlags: 0
@@ -2567,6 +2595,7 @@ MonoBehaviour:
   rotationTime: 0.2
   timeBetweenAttacks: 1
   detectionTime: 5
+  enemyAlarmArea: {fileID: 0}
   projectilePrefab: {fileID: 2940124070797970742, guid: f026c91952a0efb4ea9cbde04be00bc2,
     type: 3}
   projectileSpawnPoint: {fileID: 7758176532652193465}
