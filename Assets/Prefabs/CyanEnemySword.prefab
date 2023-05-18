@@ -3333,7 +3333,7 @@ PrefabInstance:
     - target: {fileID: 341943587943905970, guid: 65dbde8084f151b4aa525290dcd8a918,
         type: 3}
       propertyPath: m_TagString
-      value: Blade
+      value: EnemyBlade
       objectReference: {fileID: 0}
     - target: {fileID: 459620438562861560, guid: 65dbde8084f151b4aa525290dcd8a918,
         type: 3}
