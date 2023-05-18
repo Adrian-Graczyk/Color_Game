@@ -1976,6 +1976,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: EnemyBlade
       objectReference: {fileID: 0}
+    - target: {fileID: 4286121691686056570, guid: 6121c63c1b34eac429e0cfd1b8c658fb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7452328881205724114, guid: 6121c63c1b34eac429e0cfd1b8c658fb,
         type: 3}
       propertyPath: m_Name
