@@ -27,10 +27,9 @@ public class Dash : MonoBehaviour
     {
         if (canDash && playerMovement.isGrounded)
         {
-            // check for double-click
-            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
             {
-                if (Time.time - lastClickTime < 0.2f)
+                if (Input.GetKeyDown(KeyCode.LeftAlt))
                 {
                     // set direction and start coroutine for dash
                     dashDirection = GetDashDirection();
@@ -39,8 +38,9 @@ public class Dash : MonoBehaviour
                     // disable dashing and set cooldown time
                     canDash = false;
                     dashCooldown = Time.time + dashCooldownTime;
+                  
+                    lastClickTime = Time.time;
                 }
-                lastClickTime = Time.time;
             }
         }
         else
