@@ -11,6 +11,9 @@ public class RagdollScript : MonoBehaviour
     public bool isDead;
     private EnemyReferences enemyReferences;
 
+    public float forceMultiplier; // Adjust this value to control the force applied to the ragdoll
+
+
     private void Start()
     {
         isDead = false;
@@ -52,6 +55,7 @@ public class RagdollScript : MonoBehaviour
     {
         Material material = GetComponentInChildren<Renderer>().sharedMaterial;
         Material otherMaterial = collision.contacts[0].otherCollider.GetComponent<Renderer>().sharedMaterial;
+        forceMultiplier = 458f;
 
         // Check if the collision was with a game object with tag "bullet"
         if ((collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("Blade") || collision.gameObject.CompareTag("Throwable")) && !isRagdollActive)
@@ -61,6 +65,12 @@ public class RagdollScript : MonoBehaviour
             {
                 Debug.Log("same material (RagdollScript)");
                 EnableRagdoll();
+
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                Vector3 forceDirection = transform.position - player.transform.position;
+                forceDirection.Normalize();
+                // Calculate the direction from the collision point to the ragdoll's position
+                rigidBodies[0].AddForce(forceDirection*forceMultiplier, ForceMode.Impulse);
             }
         }
     }
