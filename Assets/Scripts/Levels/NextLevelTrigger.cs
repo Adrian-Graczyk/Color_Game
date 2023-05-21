@@ -30,13 +30,19 @@ public class NextLevelTrigger : MonoBehaviour
                 
             }
 
-            if (allEnemiesDead)
-            {
+            // if (allEnemiesDead)
+            // {
                 if (SceneManager.sceneCountInBuildSettings > SceneManager.GetActiveScene().buildIndex + 1)
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                {
+                    int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+                    SaveSystem.SaveProgress(nextSceneIndex);
+                    SceneManager.LoadScene(nextSceneIndex);
+                }
                 else
+                {
                     SceneManager.LoadScene(0);
-            }
+                }
+            // }
         }
     }
 }
