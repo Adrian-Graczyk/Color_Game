@@ -27,9 +27,16 @@ public class EnemyReferences : MonoBehaviour
     public float projectileSpeed = 10.0f;
     public float projectileLifetime = 2.0f;
 
+    [Header("Sword")]
+    public BoxCollider swordCollider;
+
     private void Awake()
     {
         navMesh = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+
+        if (swordCollider != null) {
+            swordCollider.enabled = false;
+        }
     }
 }

@@ -40,8 +40,8 @@ public class AiController : MonoBehaviour
         At(detect, chase, () => detect.TargetDetected());
         At(detect, idle, () => !isTargetInSight(playerTarget));
         At(chase, attack, () => isTargetInShootingRange(playerTarget) && isTargetInSight(playerTarget));
-        At(attack, chase, () => !isTargetInShootingRange(playerTarget) && !isTargetInSight(playerTarget));
-        At(attack, idle, () => !isTargetInShootingRange(playerTarget) && !isTargetInSight(playerTarget));
+        At(attack, chase, () => !isTargetInShootingRange(playerTarget) || !isTargetInSight(playerTarget));
+        // At(attack, idle, () => !isTargetInShootingRange(playerTarget) && !isTargetInSight(playerTarget));
 
         // START STATE
         fsm.SetState(idle);

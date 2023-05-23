@@ -22,9 +22,18 @@ public class EnemyState_Attack : IState
 
     public void OnExit() {
         enemyReferences.animator.SetBool("Attack", false);
+    
+        if (enemyReferences.swordCollider != null) {
+            enemyReferences.swordCollider.enabled = false;
+        }
     }
 
     public void Tick() {
+        //  workaround because in OnEnter it is not always called
+        if (enemyReferences.swordCollider != null) {
+            enemyReferences.swordCollider.enabled = true;
+        }
+
         Vector3 lookPos = target.position - enemyReferences.transform.position;
         lookPos.y = 0;
         Quaternion rotation = Quaternion.LookRotation(lookPos);

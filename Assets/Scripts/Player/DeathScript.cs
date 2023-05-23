@@ -8,11 +8,13 @@ public class DeathScript : MonoBehaviour
     [SerializeField] private Collider playerCollider;
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.contacts[0].otherCollider.gameObject.CompareTag("EnemyBullet"))
+        GameObject other = collision.contacts[0].otherCollider.gameObject;
+
+        if (other.CompareTag("EnemyBullet") || other.CompareTag("EnemyBlade"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-    }
+    }   
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("EnemyBlade")) {

@@ -84,6 +84,10 @@ public class RagdollScript : MonoBehaviour
         isRagdollActive = true;
         isDead = true;
         enemyReferences.navMesh.SetDestination(transform.position);
+
+        if (enemyReferences.swordCollider != null) {
+            enemyReferences.swordCollider.enabled = false;
+        }
     }
 
     private void SetRigidbodyState(bool state)
