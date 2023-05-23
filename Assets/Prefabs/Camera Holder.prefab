@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2188371979383974520}
   - component: {fileID: 2188371979383974523}
   - component: {fileID: 2188371979383974526}
+  - component: {fileID: 111580426}
+  - component: {fileID: 111580427}
   m_Layer: 0
   m_Name: FPSCamera
   m_TagString: Untagged
@@ -134,6 +136,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedWeapon: 0
+--- !u!114 &111580426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2188371979383974405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e949f2a891e1a2d48b1665378d20a314, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 395d3c781bb1a574a8bbb9782ddf96d7, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 111580427}
+        m_TargetAssemblyTypeName: GunDataProvider, Assembly-CSharp
+        m_MethodName: onBulletPickUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &111580427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2188371979383974405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9067461ad15787245acacb05130e93b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickedUpAmmo: 0
+  bulletMaterial: {fileID: 0}
 --- !u!1 &2188371979446504707
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,6 +269,7 @@ GameObject:
   - component: {fileID: 2188371980782940121}
   - component: {fileID: 2188371980782940120}
   - component: {fileID: 1930226659}
+  - component: {fileID: 2089037565}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -265,7 +310,7 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 32.96973
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -280,7 +325,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1847
+    m_Bits: 3895
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -351,6 +396,20 @@ MonoBehaviour:
   throwForce: 500
   pickUpRange: 5
   playerCollider: {fileID: 0}
+  weaponsHolder: {fileID: 2188371979383974405}
+--- !u!65 &2089037565
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2188371980782940122}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.4, z: 2}
+  m_Center: {x: 0, y: 0, z: 1.2}
 --- !u!1 &2591333431721829814
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,34 +518,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2188371979673043946}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2188371981103491058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2188371979673095728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e949f2a891e1a2d48b1665378d20a314, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 395d3c781bb1a574a8bbb9782ddf96d7, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2188371981103491070}
-        m_TargetAssemblyTypeName: GunScript, Assembly-CSharp
-        m_MethodName: onBulletPickUp
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2188371981103491070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,6 +534,8 @@ MonoBehaviour:
     type: 3}
   bulletPoint: {fileID: 2188371980579830876}
   bulletSpeed: 300
+  maxAmmo: 5
+  gunDataProvider: {fileID: 111580427}
 --- !u!1001 &7681253963259745066
 PrefabInstance:
   m_ObjectHideFlags: 0

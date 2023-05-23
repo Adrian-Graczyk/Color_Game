@@ -14,6 +14,8 @@ public class GunScript : MonoBehaviour
     float bulletSpeed;
     [SerializeField]
     int maxAmmo = 5;
+
+    public GunDataProvider gunDataProvider;
     
     private int currentAmmo;
     private Material bulletMaterial;
@@ -22,18 +24,17 @@ public class GunScript : MonoBehaviour
 
     void Start()
     {
-        //input = transform.root.GetComponent<StarterAssetsInputs>();
         bulletMaterial = bulletPrefab.GetComponent<Renderer>().sharedMaterial;
         gunMaterial = GetComponent<Renderer>().material;
         gunMaterial.SetColor("_EmissionColor", bulletMaterial.GetColor("_Color"));
         currentAmmo = maxAmmo;
-        //bulletSpeed = GetComponent<float>();
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            UpdateGunData();
             Shoot();
         }
     }
@@ -51,15 +52,13 @@ public class GunScript : MonoBehaviour
         }
     }
 
-    public void onBulletPickUp(Component sender, object data) {
-        Debug.Log("onBulletPickUp event received with data: " + data);
+    void UpdateGunData()
+    {
+        currentAmmo = Mathf.Min(maxAmmo, currentAmmo + gunDataProvider.pickedUpAmmo);
+        gunDataProvider.pickedUpAmmo = 0;
 
-        currentAmmo = Mathf.Min(currentAmmo + 1, maxAmmo);
-
-        if (data is Material) {
-            Material material = (Material) data;
-            bulletMaterial = material;
-            gunMaterial.SetColor("_EmissionColor", material.GetColor("_Color"));
-        }
+        if (gunDataProvider.bulletMaterial != null) {
+            gunMaterial.SetColor("_EmissionColor", gunDataProvider.bulletMaterial.GetColor("_Color"));
+        }   
     }
 }
