@@ -16,6 +16,8 @@ TagManager:
   - Fire
   - EnemyBlade
   - Ladder
+  - Gun
+  - EnemyHolder
   layers:
   - Default
   - TransparentFX

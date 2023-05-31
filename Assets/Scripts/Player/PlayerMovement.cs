@@ -64,6 +64,10 @@ public class PlayerMovement : MonoBehaviour
 
     RaycastHit slopeHit;
 
+    [SerializeField] private AudioSource jumpSound;
+    [SerializeField] private AudioSource walkSound;
+    [SerializeField] private AudioSource sprintSound;
+
     private bool OnSlope()
     {
         if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight + 0.5f))
@@ -96,10 +100,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(jumpKey) && isGrounded)
         {
+            jumpSound.Play();
             Jump();
         }
 
-        if (Input.GetKey(sprintKey) && isGrounded)
+        if (Input.GetKey(sprintKey) && isGrounded && !isCrouched)
         {
             Sprint();
             if (Input.GetKeyDown(crouchKey))
@@ -137,7 +142,18 @@ public class PlayerMovement : MonoBehaviour
             slopeMoveDirection = moveDirection;
             rb.AddForce(slopeMoveDirection.normalized * moveSpeed * movementMultiplier * Time.deltaTime, ForceMode.Force);
         }
-        
+
+        if (moveDirection.magnitude > 0 && !isSprinting && isGrounded && !isSliding)
+        {
+            if (!walkSound.isPlaying)
+            {
+                walkSound.Play();
+            }
+        }
+        else
+        {
+            walkSound.Stop();
+        }
     }
 
     void MyInput()
@@ -166,10 +182,12 @@ public class PlayerMovement : MonoBehaviour
         else if (isCrouched && isGrounded)
         {
             moveSpeed = Mathf.Lerp(moveSpeed, crouchSpeed, acceleration * Time.deltaTime);
+            sprintSound.Stop();
         }
         else
         {
             moveSpeed = Mathf.Lerp(moveSpeed, walkSpeed, acceleration * Time.deltaTime);
+            sprintSound.Stop();
         }
     }
 
@@ -188,6 +206,10 @@ public class PlayerMovement : MonoBehaviour
     void Sprint()
     {
         isSprinting = true;
+        if (!sprintSound.isPlaying)
+        {
+            sprintSound.Play();
+        }
     }
 
     void Crouch()
@@ -242,4 +264,6 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier * airMultiplier, ForceMode.Acceleration);
         }
     }
+
+   
 }

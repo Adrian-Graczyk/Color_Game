@@ -6,6 +6,9 @@ public class WeaponSwitcher : MonoBehaviour
 {
     [SerializeField] private int selectedWeapon = 0;
 
+    [SerializeField] private AudioSource swordChooseSound;
+    [SerializeField] private AudioSource gunChooseSound;
+
     private int previousSelectedWeapon;
     void Start()
     {
@@ -46,7 +49,15 @@ public class WeaponSwitcher : MonoBehaviour
         foreach (Transform weapon in transform)
         {
             if (i == selectedWeapon)
+            {
                 weapon.gameObject.SetActive(true);
+
+                if (weapon.gameObject.CompareTag("Sword"))
+                    swordChooseSound.Play();
+
+                if (weapon.gameObject.CompareTag("Gun"))
+                    gunChooseSound.Play();
+            }
             else
                 weapon.gameObject.SetActive(false);
             i++;

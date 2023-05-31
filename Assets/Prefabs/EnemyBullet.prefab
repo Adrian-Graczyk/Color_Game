@@ -129,3 +129,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 2425406414799730630}
   bulletPrefab: {fileID: 2940124070797970742}
+  pickupCollider: {fileID: 0}

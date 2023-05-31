@@ -16,6 +16,8 @@ public class SwordScript : MonoBehaviour
     private Animator animator;
     private BoxCollider swordBladeCollider;
 
+    [SerializeField] private AudioSource swordSwingSound;
+
     private void Start()
     {
         animator = Sword.GetComponent<Animator>();
@@ -29,7 +31,8 @@ public class SwordScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && canAttack)
         {
-            SwordAttack();      
+            SwordAttack();
+            swordSwingSound.Play();
         }
     }
 

@@ -21,6 +21,7 @@ public class GunScript : MonoBehaviour
     private Material bulletMaterial;
     private Material gunMaterial;
 
+    [SerializeField] private AudioSource playerShotSound;
 
     void Start()
     {
@@ -32,9 +33,9 @@ public class GunScript : MonoBehaviour
 
     void Update()
     {
+        UpdateGunData();
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            UpdateGunData();
             Shoot();
         }
     }
@@ -49,6 +50,8 @@ public class GunScript : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab, bulletPoint.transform.position, transform.rotation);
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed);
             bullet.GetComponent<Renderer>().sharedMaterial = bulletMaterial;
+
+            playerShotSound.Play();
         }
     }
 
@@ -57,8 +60,10 @@ public class GunScript : MonoBehaviour
         currentAmmo = Mathf.Min(maxAmmo, currentAmmo + gunDataProvider.pickedUpAmmo);
         gunDataProvider.pickedUpAmmo = 0;
 
-        if (gunDataProvider.bulletMaterial != null) {
+        if (gunDataProvider.bulletMaterial != null)
+        {
             gunMaterial.SetColor("_EmissionColor", gunDataProvider.bulletMaterial.GetColor("_Color"));
-        }   
+            bulletMaterial = gunDataProvider.bulletMaterial;
+        }
     }
 }

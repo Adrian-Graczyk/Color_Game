@@ -13,25 +13,26 @@ public class NextLevelTrigger : MonoBehaviour
             Debug.Log("NextLevelTrigger");
             Scene thisScene = SceneManager.GetActiveScene();
 
-            GameObject[] objectsOnScene = thisScene.GetRootGameObjects();
+            GameObject enemyHolder = GameObject.FindGameObjectWithTag("EnemyHolder");
             bool allEnemiesDead = true;
 
-        
-            foreach (GameObject ob in objectsOnScene)
+            if (enemyHolder != null)
             {
-                if(ob.CompareTag("Enemy"))
+                foreach (Transform child in enemyHolder.transform)
                 {
-                    if (!ob.GetComponent<RagdollScript>().isDead)
+                    if (child.CompareTag("Enemy"))
                     {
-                        allEnemiesDead = false;
-                        break;
+                        if (!child.GetComponent<RagdollScript>().isDead)
+                        {
+                            allEnemiesDead = false;
+                            break;
+                        }
                     }
                 }
-                
             }
 
-            // if (allEnemiesDead)
-            // {
+            if (allEnemiesDead)
+            {
                 if (SceneManager.sceneCountInBuildSettings > SceneManager.GetActiveScene().buildIndex + 1)
                 {
                     int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
@@ -42,7 +43,7 @@ public class NextLevelTrigger : MonoBehaviour
                 {
                     SceneManager.LoadScene(0);
                 }
-            // }
+            }
         }
     }
 }

@@ -12,11 +12,12 @@ public class Dash : MonoBehaviour
     public float dashCooldownTime = 3f; // time between dashes
 
     private bool canDash = true; // flag to check if player can dash
-    private float lastClickTime; // time of last click
     private Vector3 dashDirection; // direction to dash
     private float dashCooldown; // time when player can dash again
 
     Rigidbody rb;
+
+    [SerializeField] private AudioSource dashSound;
 
     private void Start()
     {
@@ -31,6 +32,8 @@ public class Dash : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.LeftAlt))
                 {
+                    dashSound.Play();
+
                     // set direction and start coroutine for dash
                     dashDirection = GetDashDirection();
                     StartCoroutine(DashCoroutine());
@@ -38,8 +41,7 @@ public class Dash : MonoBehaviour
                     // disable dashing and set cooldown time
                     canDash = false;
                     dashCooldown = Time.time + dashCooldownTime;
-                  
-                    lastClickTime = Time.time;
+
                 }
             }
         }

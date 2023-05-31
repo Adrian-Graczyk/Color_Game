@@ -15,9 +15,6 @@ public class PickUpScript : MonoBehaviour
     private int LayerNumber; //layer index
     private int LayerNumberDefault;
 
-
-
-
     private float originalCameraSens;
     PlayerLook playerLook;
 
@@ -25,6 +22,8 @@ public class PickUpScript : MonoBehaviour
 
     [SerializeField] private GameObject weaponsHolder;
     private int usedWeaponIndex;
+
+    [SerializeField] private AudioSource throwSound;
     void Start()
     {
         LayerNumber = LayerMask.NameToLayer("FPSLayer"); //if your holdLayer is named differently make sure to change this ""
@@ -143,6 +142,8 @@ public class PickUpScript : MonoBehaviour
         heldObj.transform.parent = null;
         heldObjRb.AddForce(transform.forward * throwForce);
         heldObj = null;
+        
+        throwSound.Play();
     }
     void StopClipping() //function only called when dropping/throwing
     {

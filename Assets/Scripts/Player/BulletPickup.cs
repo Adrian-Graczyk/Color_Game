@@ -13,6 +13,7 @@ public class BulletPickup : MonoBehaviour
     [Header("Events")]
     public GameEvent onBulletPickUp;
 
+    [SerializeField] private AudioSource bulletPickUpSound;
 
     void Update()
     {
@@ -31,6 +32,7 @@ public class BulletPickup : MonoBehaviour
                 if (hitCollider.CompareTag("Bullet")) {
                     onBulletPickUp.Raise(this, hitCollider.GetComponent<Renderer>().sharedMaterial);
                     Destroy(hitCollider.gameObject);
+                    bulletPickUpSound.Play();
                 }
             }
         }

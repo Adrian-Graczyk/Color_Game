@@ -7,6 +7,7 @@ public class CutsceneEnter : MonoBehaviour
 {
     [SerializeField] private GameObject timeline;
     [SerializeField] private GameObject virtualCamera;
+
     private void OnTriggerEnter(Collider other)
     {
         int enemiesAlive = 0;
@@ -15,21 +16,22 @@ public class CutsceneEnter : MonoBehaviour
             Debug.Log("NextLevelTrigger");
             Scene thisScene = SceneManager.GetActiveScene();
 
-            GameObject[] objectsOnScene = thisScene.GetRootGameObjects();
+            GameObject enemyHolder = GameObject.FindGameObjectWithTag("EnemyHolder");
             bool allEnemiesDead = true;
 
-
-            foreach (GameObject ob in objectsOnScene)
+            if (enemyHolder != null)
             {
-                if (ob.CompareTag("Enemy"))
+                foreach (Transform child in enemyHolder.transform)
                 {
-                    if (!ob.GetComponent<RagdollScript>().isDead)
+                    if (child.CompareTag("Enemy"))
                     {
-                        allEnemiesDead = false;
-                        break;
+                        if (!child.GetComponent<RagdollScript>().isDead)
+                        {
+                            allEnemiesDead = false;
+                            break;
+                        }
                     }
                 }
-
             }
 
             if (allEnemiesDead)

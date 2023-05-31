@@ -13,7 +13,7 @@ public class RagdollScript : MonoBehaviour
 
     public float forceMultiplier; // Adjust this value to control the force applied to the ragdoll
 
-
+    [SerializeField] private AudioSource deathSound;
     private void Start()
     {
         isDead = false;
@@ -88,6 +88,8 @@ public class RagdollScript : MonoBehaviour
         if (enemyReferences.swordCollider != null) {
             enemyReferences.swordCollider.enabled = false;
         }
+
+        deathSound.Play();
     }
 
     private void SetRigidbodyState(bool state)
