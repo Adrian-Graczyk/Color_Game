@@ -33,7 +33,7 @@ public class GunScript : MonoBehaviour
 
     void Update()
     {
-        UpdateGunData();
+        updateGunData();
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Shoot();
@@ -55,7 +55,25 @@ public class GunScript : MonoBehaviour
         }
     }
 
-    void UpdateGunData()
+    public (int, Material) getCurrentGunData() {
+        if (bulletMaterial == null) {
+            Start();
+        }
+
+        updateGunData();
+        return (currentAmmo, bulletMaterial);
+    }
+
+    public void setCurrentAmmo(int currentAmmo)
+    {
+        if (currentAmmo < 0 ) {
+            return;
+        }
+
+        this.currentAmmo = Mathf.Min(maxAmmo, currentAmmo);
+    }
+
+    private void updateGunData()
     {
         currentAmmo = Mathf.Min(maxAmmo, currentAmmo + gunDataProvider.pickedUpAmmo);
         gunDataProvider.pickedUpAmmo = 0;
