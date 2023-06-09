@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CheckpointManager : MonoBehaviour
 {
-    public List<CheckpointObjects> checkpoints;
+    public List<Checkpoint> checkpoints;
 
     [Header("PlayerWeaponsData")]
     public GunDataProvider gunDataProvider;
@@ -22,6 +23,10 @@ public class CheckpointManager : MonoBehaviour
 
     void Update()
     {
+        if (checkpoints[currentCheckpoint].areAllEnemiesDead() && (currentCheckpoint + 1 < checkpoints.Count)) {
+            checkpoints[currentCheckpoint + 1].enableCheckpointTrigger();
+        }
+
         if (Input.GetKeyDown(KeyCode.R))
         {
             checkpoints[currentCheckpoint].resetObjects();
@@ -41,6 +46,10 @@ public class CheckpointManager : MonoBehaviour
             return;
         }
 
+        if (currentCheckpoint == checkpoints.Count - 1) {
+            completeLevel();
+        }
+
         readPlayerWeaponsData();
         activateCheckpoints();
     }
@@ -49,7 +58,7 @@ public class CheckpointManager : MonoBehaviour
     {
         for (int i = 0; i < checkpoints.Count; i++)
         {
-            checkpoints[i].setActiveObjects(i == currentCheckpoint);
+            checkpoints[i].setActiveObjects(i <= currentCheckpoint);
         }
     }
 
@@ -85,6 +94,19 @@ public class CheckpointManager : MonoBehaviour
 
         foreach (var bullet in bullets) {
             Destroy(bullet);
+        }
+    }
+
+    private void completeLevel() {
+        if (SceneManager.sceneCountInBuildSettings > SceneManager.GetActiveScene().buildIndex + 1)
+        {
+            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
+            if (SaveSystem.LoadProgress().currentSceneIndex < nextSceneIndex) {
+                 SaveSystem.SaveProgress(nextSceneIndex);
+            }
+
+            SceneManager.LoadScene(0);  // go back to MainMenu
         }
     }
 }
