@@ -17,7 +17,7 @@ public class GunScript : MonoBehaviour
 
     public GunDataProvider gunDataProvider;
     
-    private int currentAmmo;
+    public int currentAmmo;
     private Material bulletMaterial;
     private Material gunMaterial;
 

@@ -11,7 +11,7 @@ public class Dash : MonoBehaviour
     public float dashTime = 0.2f; // duration of dash
     public float dashCooldownTime = 3f; // time between dashes
 
-    private bool canDash = true; // flag to check if player can dash
+    public bool canDash = true; // flag to check if player can dash
     private Vector3 dashDirection; // direction to dash
     private float dashCooldown; // time when player can dash again
 

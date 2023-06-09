@@ -2599,11 +2599,11 @@ MonoBehaviour:
   timeBetweenAttacks: 1
   detectionTime: 5
   enemyAlarmArea: {fileID: 0}
-  projectilePrefab: {fileID: 2940124070797970742, guid: f026c91952a0efb4ea9cbde04be00bc2,
+  projectilePrefab: {fileID: 2940124070797970742, guid: ee7107e2078eb17428ba616af691fff6,
     type: 3}
   projectileSpawnPoint: {fileID: 7758176532652193465}
-  projectileSpeed: 100
-  projectileLifetime: 2
+  projectileSpeed: 8
+  projectileLifetime: 10
   swordCollider: {fileID: 0}
 --- !u!114 &416888703
 MonoBehaviour:
