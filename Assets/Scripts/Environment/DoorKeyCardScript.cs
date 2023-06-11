@@ -9,11 +9,10 @@ public class DoorKeyCardScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Keycard")
+        if (other.gameObject.name == "Keycard" || other.gameObject.name == "Keycard(Clone)")
         {
             GetComponent<Renderer>().material = openMaterial;
             GameObject.Find("DoorKeyCard").GetComponent<Animator>().SetTrigger("character_nearby");
         }
     }
-
 }
