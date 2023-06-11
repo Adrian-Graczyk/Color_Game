@@ -16,14 +16,18 @@ public class HitScript : MonoBehaviour
     {
         Collider otherCollider = collision.contacts[0].otherCollider;
         Collider thisCollider = collision.contacts[0].thisCollider;
-        Material otherMaterial = otherCollider.GetComponent<Renderer>().sharedMaterial;
 
-        Debug.Log("tag: " + otherCollider.tag + " name: " + otherMaterial.name + " expected: " + material.name);
+        Debug.Log("other collider tag: " + otherCollider.tag);
 
-
-        if ((otherCollider.CompareTag("Bullet") || otherCollider.CompareTag("Blade") || otherCollider.CompareTag("Throwable")) && otherMaterial.name == material.name && thisCollider.CompareTag("Enemy"))
+        if (otherCollider.CompareTag("Bullet") || otherCollider.CompareTag("Blade") || otherCollider.CompareTag("Throwable"))
         {
-            collision.contacts[0].thisCollider.GetComponent<Renderer>().material.color = Color.white;
+            Material otherMaterial = otherCollider.GetComponent<Renderer>().sharedMaterial;
+
+            Debug.Log(" name: " + otherMaterial.name + " expected: " + material.name);
+
+            if (otherMaterial.name == material.name) {
+                collision.contacts[0].thisCollider.GetComponent<Renderer>().material.color = Color.white;
+            }
         }
         
         if((thisCollider.CompareTag("ColorObject") || thisCollider.CompareTag("Throwable")) && otherCollider.CompareTag("Blade"))
