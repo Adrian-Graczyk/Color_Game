@@ -12,6 +12,8 @@ public class CheckpointManager : MonoBehaviour
     public GunScript gunScript;
     public BladeColorChange bladeColorScript;
 
+    [HideInInspector] public bool isLevelEndTriggerActivated = false;
+
     private int currentCheckpoint = 0;
     private WeaponsCheckpointData weaponsData = new WeaponsCheckpointData();
 
@@ -27,6 +29,7 @@ public class CheckpointManager : MonoBehaviour
     {
         if (checkpoints[currentCheckpoint].areAllEnemiesDead() && (currentCheckpoint + 1 < checkpoints.Count)) {
             checkpoints[currentCheckpoint + 1].enableCheckpointTrigger();
+            isLevelEndTriggerActivated = (currentCheckpoint + 1 == checkpoints.Count - 1);
         }
 
         if (Input.GetKeyDown(KeyCode.R))
