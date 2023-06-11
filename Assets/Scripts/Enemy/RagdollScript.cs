@@ -54,12 +54,13 @@ public class RagdollScript : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Material material = GetComponentInChildren<Renderer>().sharedMaterial;
-        Material otherMaterial = collision.contacts[0].otherCollider.GetComponent<Renderer>().sharedMaterial;
         forceMultiplier = 458f;
 
         // Check if the collision was with a game object with tag "bullet"
         if ((collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("Blade") || collision.gameObject.CompareTag("Throwable")) && !isRagdollActive)
         {
+            Material otherMaterial = collision.contacts[0].otherCollider.GetComponent<Renderer>().sharedMaterial;
+
             Debug.Log("Hit by bullet / throwable (RagdollScript)" + "Enemy color = " + material.color + ", Object color = " + otherMaterial.color);
             if (otherMaterial.color == material.color || material.color == Color.white)
             {
