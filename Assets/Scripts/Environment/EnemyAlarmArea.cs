@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class EnemyAlarmArea : MonoBehaviour
 {
@@ -9,13 +10,15 @@ public class EnemyAlarmArea : MonoBehaviour
 
 
     public void alarmEnemies() {
-        Collider[] hitColliders = Physics.OverlapBox(transform.position, boxSize, transform.rotation, enemyLayer);
-
-        Debug.Log("Alarmed enemies: " + hitColliders);
-
-        foreach (var collider in hitColliders) {
-            collider.gameObject.GetComponent<AiController>().alarm();
-        }
+        Physics.OverlapBox(transform.position, boxSize, transform.rotation, enemyLayer)
+            .Select(collider => collider.gameObject.GetComponent<AiController>())
+            .Where(aiController => aiController != null)
+            .ToList()
+            .ForEach(aiController =>
+            {
+                Debug.Log("Alarming: " + aiController.gameObject.name);
+                aiController.alarm();
+            });
     }
 
     private void OnDrawGizmos() {
