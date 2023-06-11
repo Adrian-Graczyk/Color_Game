@@ -17,6 +17,8 @@ public class CheckpointManager : MonoBehaviour
 
     void Start()
     {
+        checkpoints.ForEach(checkpoint => checkpoint.init());
+
         readPlayerWeaponsData();
         activateCheckpoints();
     }
@@ -48,6 +50,7 @@ public class CheckpointManager : MonoBehaviour
 
         if (currentCheckpoint == checkpoints.Count - 1) {
             completeLevel();
+            return;
         }
 
         readPlayerWeaponsData();
@@ -98,12 +101,14 @@ public class CheckpointManager : MonoBehaviour
     }
 
     private void completeLevel() {
-        if (SceneManager.sceneCountInBuildSettings > SceneManager.GetActiveScene().buildIndex + 1)
-        {
-            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
 
+        Debug.Log("Level completed, nextSceneIndex: " + nextSceneIndex + " sceneCountInBuildSettings: " + SceneManager.sceneCountInBuildSettings);
+
+        if (SceneManager.sceneCountInBuildSettings > nextSceneIndex)
+        {
             if (SaveSystem.LoadProgress().currentSceneIndex < nextSceneIndex) {
-                 SaveSystem.SaveProgress(nextSceneIndex);
+                SaveSystem.SaveProgress(nextSceneIndex);
             }
 
             SceneManager.LoadScene(0);  // go back to MainMenu

@@ -13,7 +13,7 @@ public class Checkpoint : MonoBehaviour
     private List<GameObject> copiedObjects = new List<GameObject>();
     private BoxCollider collider;
 
-    void Start()
+    public void init()
     {
         copyObjects();
 
