@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d04b17b1cf38641974157580806753, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDestroyedOnContact: 1
   rb: {fileID: 2425406414799730630}
   bulletPrefab: {fileID: 2940124070797970742}
   pickupCollider: {fileID: 0}

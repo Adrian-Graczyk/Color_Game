@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
+    public bool isDestroyedOnContact = false;
+
     [SerializeField]
     Rigidbody rb;
 
@@ -20,13 +22,12 @@ public class BulletScript : MonoBehaviour
     private SphereCollider sphereCollider;
     
     
-
-
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        if(!gameObject.CompareTag("EnemyBullet"))
-        Physics.IgnoreCollision(GetComponent<Collider>(), GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Collider>(), true);
+        if(!gameObject.CompareTag("EnemyBullet")) {
+            Physics.IgnoreCollision(GetComponent<Collider>(), GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Collider>(), true);
+        }
         
         if (pickupCollider != null) {
             foreach (Collider otherCollider in FindObjectsOfType<Collider>())
@@ -34,16 +35,6 @@ public class BulletScript : MonoBehaviour
                 Physics.IgnoreCollision(pickupCollider, otherCollider, true);
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    
-       if (isStick)
-       {
-            //transform.position = target.transform.position + refPos;
-       }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -62,6 +53,10 @@ public class BulletScript : MonoBehaviour
             isStick = true;
 
             ChangeMaterial(collision.contacts[0].otherCollider);
+        }
+
+        if (isDestroyedOnContact) {
+            Destroy(gameObject);
         }
     }
 
