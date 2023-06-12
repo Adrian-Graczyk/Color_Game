@@ -1,18 +1,57 @@
-Kapitan: "Jak zwykle dobra robota. Kolejna wykrywa grupa stacjonuje w ruinach wieżowca w zastrzeżonych dzikich terenach. Spodziewaj się…."
+Captain: "Great job as always on the rooftops. The next identified group is stationed in the ruins of a skyscraper in restricted wilderness areas. Expect..."
+
+“…”
+
+Resistance Leader: "How can I convince you to stop?"
+
+Executor: "Hmm, it's you again. You can give up. You won't succeed."
+
+Resistance Leader: "Does it truly not bother you to kill innocent people? Most of those cold bodies you leave behind didn't choose such a life, they just want to survive.
+
+"Executor: "What are you talking about? I don't kill them; I reset their implants to make them useful to society again."
+
+Resistance Leader: "Oh my god, so you're just an idiot. That 'reset' you're talking about causes a short circuit in the implant, which then shocks the brain and leads to death."
+
+Executor: "Shut up already. You are the terrorists, not me." 
+
+“…”
+
+Executor: "Captain... Captain... Fuck... What? What was that?"
+
+“…”
 
 
+(Later)
 
-Liderka ruchu oporu: "Jak mam cię przekonać, żebyś przestał."
+Resistance Leader: "Listen, I'm not proud of what we're doing, believe me. Unfortunately, it's the best way to free people from the control of those fucking implants."
 
-Egzekutor: "hmm, znowu ty. Możesz dać sobie spokój. Nie dasz rady"
+Executor: "What do you mean?"
 
-Liderka ruchu oporu: "Naprawdę nie przeszkadza ci mordowanie niewinnych osób? Większość z tych, których zimne ciała po sobie zostawiasz, nie ma wybrała takiego życia, chcą jedynie przeżyć."
+Resistance Leader: " Intensely felt emotions trigger implant malfunctions, as you probably already know. Fear is the simplest of them, especially since subconsciously everyone knows that the world they live in is already terrifying."
 
-Egzekutor: "O czym ty mówisz? Nie zabijam ich, resetuje ich implanty, żeby ponownie byli przydatni dla społeczeństwa."
+Executor: (Whispers to himself) "Hmm... Stall for time, stall for time" 
+(Aloud) "How did you figure this out? Did you just start blowing up buildings and used that as an justification and excuse for doing what you think is right?"
 
-Liderka ruchu oporu: "O mój boże, czyli ty po prostu jesteś idiotą. Ten „reset”, o którym mówisz, prowadzi do zwarcia w implancie, który następnie poraża mózg i prowadzi do śmierci. "
+Resistance Leader: "If you truly want to know, I can tell you. I have nothing to lose. As long as the party rules, there's nothing left for me but fighting and death. My name is Catherine Reyes. I am one of the first of the 'awakened.' As you know, every woman in this fucking society comes to a point where she must fulfill her duties to the party and bear a child with a partner, chosen, of course, by the party. At first, it didn't bother me. With a sense of duty, I did what was necessary with a stranger, and I became pregnant. During those 9 months, I felt that something was happening to me, not in a physical sense. I didn't understand it back then, how could I? I was an emotionless robot. But when the birth happened, and they took away MY son, and I realized I would never see him again, something in me snapped. Suddenly, the world became colorful, and a wave of overwhelming emotions washed over me. I didn't know what was happening, but one thing was certain: I had to escape. When the doctor tried to restrain me, I took a pair of scissors and stabbed him, then I started running. Several staff members also tried to stop me, but they didn't survive either. And in that moment, when I was terrified and fighting for my life, I noticed that other patients who were witnessing these events began trembling, then looking at me as if I were a monster. Right after my escape, which was possible only because police and security weren't as prevalent back then as they are now, I realized that my actions led to the awakening of those patients. I saw fear in their eyes... FEAR. Do you understand? They were free. That's when I understood what I had to do next. I assume you know the rest."
 
-Egzekutor: "Zamknij się już, ty wy jesteście terrorystami, nie ja" (Przerywa rozmowę) 
+Executor: "Children are taken to have implants installed in them and are handed over to educational facilities to prepare them for their designated professions. I don't understand how something so normal caused a malfunction in your implant."
 
-Egzekutor: "Kapitanie…. Kapitanie… Kurwa… Co? Co to było?"
+Resistance Leader: "Somehow that doesn't surprise me. Listen, I'm begging you. Finish this. End this mission and let us live. We don't deserve to die for wanting to be free."
 
+“…”
+
+Executor: "Mitchell, is it true that implant reset leads to death?"
+
+Captain: "Mitchell? What's happening to you? I'm your captain, and you should address me as such."
+
+Executor: "I apologize, Captain, but I did ask you a question. Please answer it."
+
+Captain: "Yes, it kills those savages. They wouldn't be useful for anything anyway."
+
+Executor: "Then why did you lie to me? You know I have no problem with killing. What has changed?"
+
+Captain: "Enough with these questions. You have a task to accomplish. Find and kill that bitch."
+
+“…”
+
+Executor: (To yourself) "Yes sir."

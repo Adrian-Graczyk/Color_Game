@@ -30,6 +30,12 @@ public class EnemyReferences : MonoBehaviour
     [Header("Sword")]
     public BoxCollider swordCollider;
 
+    [Header("Sounds")]
+    public AudioSource walkSound;
+    public AudioSource gunSound;
+    public AudioSource swordSound;
+
+
     private void Awake()
     {
         navMesh = GetComponent<NavMeshAgent>();

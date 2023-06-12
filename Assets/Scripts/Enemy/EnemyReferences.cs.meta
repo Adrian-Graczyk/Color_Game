@@ -3,7 +3,16 @@ guid: e198d79fda1212e49b9968aedaaf0e91
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - navMesh: {instanceID: 0}
+  - animator: {instanceID: 0}
+  - enemyAlarmArea: {instanceID: 0}
+  - projectilePrefab: {instanceID: 0}
+  - projectileSpawnPoint: {instanceID: 0}
+  - swordCollider: {instanceID: 0}
+  - walkSound: {fileID: 8300000, guid: e2375b48864218743a5cab0b6b6deaca, type: 3}
+  - gunSound: {fileID: 8300000, guid: 6ef3d8fde3713874abba8709a71be280, type: 3}
+  - swordSound: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

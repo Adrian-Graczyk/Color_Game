@@ -1,42 +1,49 @@
-Egzekutor: "Kapitanie, czemu w systemie wizyjnym widzę także przedmioty w kolorze?"
+Executor: "Captain, why do I also see objects in color in my visual system?"
 
-Kapitan: "Sam nie do końca to rozumiem. Nie jestem technikiem. Z tego co wiem może to być jakoś związane z śladem genetycznym pozostawionym przez ludzi z przepalonym implantem na tych przedmiotach. Jednocześnie mogą to być jakieś błędy systemu. Jest to nadal prototypowa technologia, pamiętaj o tym. 
-Zamiast zaprzątać sobie tym jednak głowę, wykorzystaj to aby odpowiednio dostosować tryb resetu implantu w twojej broni. Twoja broń automatycznie powinna pobierać potrzebne dane z przedmiotu w danym kolorze przy fizycznym kontakcie. Możesz także podnieść przedmiot, naładować go ładunkiem i cisnąć w przeciwnika, to też powinno zadziałać."
+Captain: "I don't fully understand it myself. I'm not a technician. From what I know, it might be related to the genetic trace left by people with malfunctioning implants on those objects. At the same time, it could be some system glitches. Remember, this is still prototype technology. Instead of dwelling on it, use it to adjust the implant reset mode in your weapon accordingly. Your weapon should automatically retrieve the necessary data from the object in the corresponding color upon physical contact. You can also pick up an object, charge it, and throw it at the enemy, that should work too."
 
-Egzekutor: "Dziękuje za informacje kapitanie"
+Executor: "Thank you for the information, Captain."
 
-Kapitan: "I pamiętaj…."
+Captain: "And remember..."
+
+"..."
+
+Executor: "Hello, Captain?"
+
+Resistance Leader: "Greetings, Executor (pff, did you come up with that yourself?). I only have a moment, so I'll be quick. The Party you serve is an organization full of secrets and lies. And we can free you from the control they exert over you."
+
+Executor: "I am not controlled. I am loyal, and my loyalty belongs entirely to the Party. You won't convince me to betray it, so you can stop trying. Hmm, who are you, anyway?"
+
+Resistance Leader: "I am the one you're tasked to find and most likely kill, but that's not important right now. Can't you see that you're a tool in the hands of others? Haven't you ever wondered what truly goes on in the Party?"
+
+Executor: "It is not my role to ask questions. I am here to follow orders."
+
+Resistance Leader: "It doesn't have to be that way. I can help you. I can give you information about what truly happens within the Party. You'll see that it's not what you th.."
+
+Executor: "..Fuck off."
+
+"..."
+
+Executor: "Captain, can you hear me?"
+
+Captain: "Yes, I can now. What happened?"
+
+Executor: "The resistance leader hacked into our communication link."
+
+Captain: "What did she want from you?"
+
+Executor: "She tried to convince me to abandon the mission. I terminated the connection before she could start her persuasion."
+
+Captain: "Oh, I see. In that case, next time, listen to what she has to say. It might be useful to us. We'll also try to trace her location during the next conversation. Draw it out as long as possible if you get the chance."
+
+Executor: "Understood, Captain."
+
+Captain: "Now go and reset the next group of rebels who have taken over rooftops in the city. Michel, over and out."
 
 
 
 
-Egzekutor: "Halo, kapitanie?"
-
-Liderka ruchu oporu: "Witaj, egzekutorze (pff, sam to wymyśliłeś?). Mam pewnie tylko chwilę, więc będę się streszczać. Partia, której służysz, to organizacja pełna sekretów i kłamstw. A my możemy cię uwolnić od tej kontroli, jaką nad tobą wywierają."
-
-Egzekutor: "Nie jestem kontrolowany, jestem lojalny, a moja lojalność należy tylko i wyłącznie do partii. Nie przekonasz mnie do zdrady, wiec możesz dać sobie spokój z próbowaniem. Hmm, kim ty w ogóle jesteś?"
-
-Liderka ruchu oporu: "Jestem tą, którą masz za zadanie odnaleźć i zakładam że zamordować, ale to nie jest istotne w tym momencie. Naprawdę nie widzisz, że jesteś narzędziem w rękach innych? Czy naprawdę nie zastanawiałeś się, co tak naprawdę się dzieje w partii?"
-
-Egzekutor: "Nie jest to moja rola, aby zadawać pytania. Jestem po to, aby wykonywać rozkazy."
-
-Liderka ruchu oporu: "Nie musi to tak wyglądać. Mogę ci pomóc. Mogę przekazać ci informacje o tym, co tak naprawdę dzieje się w partii. Zobaczysz, że to nie jest to, na co.."
-
-Egzekutor: "..Spierdalaj"
 
 
-Egzekutor: "Kapitanie, słyszysz mnie?"
 
-Kapitan: "Teraz tak, co się stało?" 
 
-Egzekutor: "Liderka ruchu oporu shakowała nasze łącza."
-
-Kapitan: "Czego od ciebie chciała?" 
-
-Egzekutor: "Próbowała mnie przekonać do porzucenia misji, przerwałem połączenie zanim zaczęła się rozgadywać"
-
-Kapitan: "W takim razie następnym razem, posłuchaj co ma do powiedzenia. Może się to nam przydać. Spróbujemy także zdobyć jej lokalizację w trakcie następnej rozmowy. Przeciągnij to najdłużej jak możesz, jeśli będziesz miał okazję"
-
-Egzekutor: "Dobrze, kapitanie"
-
-Kapitan: "A teraz idź i zresetuj następną grupę rebeliantów, która przejęła dachy w mieście. Michel bez odbioru."

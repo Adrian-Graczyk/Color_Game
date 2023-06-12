@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using UnityEngine;
 
 public class EnemyState_Attack : IState
@@ -45,7 +46,8 @@ public class EnemyState_Attack : IState
 
             GameObject projectile = GameObject.Instantiate(enemyReferences.projectilePrefab, enemyReferences.projectileSpawnPoint.position, enemyReferences.projectileSpawnPoint.rotation);
             Rigidbody projectileRigidbody = projectile.GetComponent<Rigidbody>();
-            projectileRigidbody.velocity = enemyReferences.projectileSpawnPoint.forward * enemyReferences.projectileSpeed;
+            Vector3 bulletTrajectory = target.position - enemyReferences.projectileSpawnPoint.position;
+            projectileRigidbody.velocity = bulletTrajectory * enemyReferences.projectileSpeed;
             GameObject.Destroy(projectile, enemyReferences.projectileLifetime);
         }
     }
