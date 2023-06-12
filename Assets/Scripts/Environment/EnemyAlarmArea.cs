@@ -8,9 +8,10 @@ public class EnemyAlarmArea : MonoBehaviour
     public Vector3 boxSize;
     public LayerMask enemyLayer;
 
+    private bool isAlarmed = false;
 
     public void alarmEnemies() {
-        Physics.OverlapBox(transform.position, boxSize, transform.rotation, enemyLayer)
+        Physics.OverlapBox(transform.position, boxSize / 2.0f, transform.rotation, enemyLayer)
             .Select(collider => collider.gameObject.GetComponent<AiController>())
             .Where(aiController => aiController != null)
             .ToList()
