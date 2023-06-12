@@ -26,6 +26,11 @@ public class EnemyState_Chase : IState
         if (enemyReferences.pathUpdateDelay <= Time.time) {
             pathUpdateDeadline = Time.time + enemyReferences.pathUpdateDelay;
             enemyReferences.navMesh.SetDestination(target.position);
+
+            if (!enemyReferences.walkSound.isPlaying)
+            {
+                enemyReferences.walkSound.Play();
+            }
         }
     }
 

@@ -29,6 +29,11 @@ public class EnemyState_Patrol : IState
             targetNavPoint = patrolPath.NextNavPoint(targetNavPoint);
             enemyReferences.navMesh.SetDestination(targetNavPoint.transform.position);
         }
+
+        if (!enemyReferences.walkSound.isPlaying)
+        {
+            enemyReferences.walkSound.Play();
+        }
     }
 
     public Color GizmoColor() {

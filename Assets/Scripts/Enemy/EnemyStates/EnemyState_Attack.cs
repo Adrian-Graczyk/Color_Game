@@ -46,9 +46,10 @@ public class EnemyState_Attack : IState
 
             GameObject projectile = GameObject.Instantiate(enemyReferences.projectilePrefab, enemyReferences.projectileSpawnPoint.position, enemyReferences.projectileSpawnPoint.rotation);
             Rigidbody projectileRigidbody = projectile.GetComponent<Rigidbody>();
-            Vector3 bulletTrajectory = target.position - enemyReferences.projectileSpawnPoint.position;
-            projectileRigidbody.velocity = bulletTrajectory * enemyReferences.projectileSpeed;
+            projectileRigidbody.velocity = (target.position - enemyReferences.projectileSpawnPoint.position) * enemyReferences.projectileSpeed;
             GameObject.Destroy(projectile, enemyReferences.projectileLifetime);
+
+            enemyReferences.gunSound.Play();
         }
     }
 
