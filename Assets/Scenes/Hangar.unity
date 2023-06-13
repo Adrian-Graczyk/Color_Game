@@ -56833,7 +56833,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Resistance Leader: "So you do remember after all... Yes, I''m sure."
+  m_text: 'Resistance Leader: "Yes, I''m sure. Can''t you see he looks exactly like
+    you?"
 
 '
   m_isRightToLeft: 0
