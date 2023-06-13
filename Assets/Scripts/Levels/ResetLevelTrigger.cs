@@ -5,11 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class ResetLevelTrigger : MonoBehaviour
 {
+    [Header("Events")]
+    public GameEvent onPlayerDeath;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            onPlayerDeath.Raise(this, null);
         }
     }
 }

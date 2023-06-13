@@ -34,9 +34,7 @@ public class CheckpointManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            checkpoints[currentCheckpoint].resetObjects();
-            resetPlayer();
-            clearBullets();
+            resetObjects();
         }
     }
 
@@ -58,6 +56,12 @@ public class CheckpointManager : MonoBehaviour
 
         readPlayerWeaponsData();
         activateCheckpoints();
+    }
+
+    public void resetObjects() {
+        checkpoints[currentCheckpoint].resetObjects();
+        resetPlayer();
+        clearBullets();
     }
 
     private void activateCheckpoints()

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8904318065197630425}
   - component: {fileID: 1522788421453613964}
   - component: {fileID: 7305363316968166503}
+  - component: {fileID: 5668821172330888294}
   m_Layer: 0
   m_Name: CheckpointManager
   m_TagString: Untagged
@@ -79,3 +80,32 @@ MonoBehaviour:
   gunDataProvider: {fileID: 0}
   gunScript: {fileID: 0}
   bladeColorScript: {fileID: 0}
+  isLevelEndTriggerActivated: 0
+--- !u!114 &5668821172330888294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8894873717056859396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e949f2a891e1a2d48b1665378d20a314, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 812df0cc579b7404e8d83f55726ebd5d, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7305363316968166503}
+        m_TargetAssemblyTypeName: CheckpointManager, Assembly-CSharp
+        m_MethodName: resetObjects
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

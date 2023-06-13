@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class DeathScript : MonoBehaviour
 {
+    [Header("Events")]
+    public GameEvent onPlayerDeath;
+
     [SerializeField] private Collider playerCollider;
     private void OnCollisionEnter(Collision collision)
     {
@@ -12,13 +14,13 @@ public class DeathScript : MonoBehaviour
 
         if (other.CompareTag("EnemyBullet") || other.CompareTag("EnemyBlade"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            onPlayerDeath.Raise(this, null);
         }
     }   
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("EnemyBlade")) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            onPlayerDeath.Raise(this, null);
         }
     }
 }

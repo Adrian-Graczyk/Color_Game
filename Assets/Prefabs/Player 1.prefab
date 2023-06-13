@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4608e1f9c28c7741a0ee374cbaa27d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlayerDeath: {fileID: 11400000, guid: 812df0cc579b7404e8d83f55726ebd5d, type: 2}
   playerCollider: {fileID: 7473661168032169106}
 --- !u!114 &7473661167235685290
 MonoBehaviour:

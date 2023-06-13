@@ -173,8 +173,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 065938c34b24ec440943f2eeea1e73ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onBulletPickUp: {fileID: 11400000, guid: 395d3c781bb1a574a8bbb9782ddf96d7, type: 2}
   pickupRange: 1.5
+  bulletLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  pickupCollider: {fileID: 0}
+  bulletPickupKey: 324
+  onBulletPickUp: {fileID: 11400000, guid: 395d3c781bb1a574a8bbb9782ddf96d7, type: 2}
+  bulletPickUpSound: {fileID: 0}
 --- !u!1 &9055433877164628127
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,6 +274,9 @@ MonoBehaviour:
   crouchSpeed: 3
   slideDuration: 1.5
   slideSpeed: 5
+  jumpSound: {fileID: 0}
+  walkSound: {fileID: 0}
+  sprintSound: {fileID: 0}
 --- !u!114 &9055433877164628099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +334,8 @@ MonoBehaviour:
   dashForce: 200
   dashTime: 0.1
   dashCooldownTime: 3
+  canDash: 1
+  dashSound: {fileID: 0}
 --- !u!114 &9055433877164628096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,6 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4608e1f9c28c7741a0ee374cbaa27d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPlayerDeath: {fileID: 11400000, guid: 812df0cc579b7404e8d83f55726ebd5d, type: 2}
   playerCollider: {fileID: 9055433876904181694}
 --- !u!1 &9055433878509597037
 GameObject:
