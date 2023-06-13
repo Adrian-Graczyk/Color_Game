@@ -934,7 +934,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'Captain: "I knew I could count on you. Thank you for your service. It''s
-    been good working with you. Farewell."
+    been good working with you. You were a good soldier. Farewell."
 
 '
   m_isRightToLeft: 0
@@ -15387,11 +15387,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CachedValues:
-  - 54.333333333333336
   - 0
-  - 54.333333333333336
-  - 54.333333333333336
-  - 54.333333333333336
+  - 0
+  - 0
+  - 0
+  - 0
 --- !u!114 &788051694
 MonoBehaviour:
   m_ObjectHideFlags: 0

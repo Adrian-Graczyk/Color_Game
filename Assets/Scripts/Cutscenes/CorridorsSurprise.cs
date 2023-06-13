@@ -9,6 +9,7 @@ public class CorridorsSurprise : MonoBehaviour
     [SerializeField] private GameObject enemy3;
     [SerializeField] private GameObject enemy4;
     [SerializeField] private GameObject enemy5;
+    [SerializeField] private GameObject afterSurpiseTexts;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -18,6 +19,7 @@ public class CorridorsSurprise : MonoBehaviour
             enemy3.SetActive(true);
             enemy4.SetActive(true);
             enemy5.SetActive(true);
+            afterSurpiseTexts.SetActive(true);
         }
     }
 }
