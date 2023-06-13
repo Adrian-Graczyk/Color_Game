@@ -27,21 +27,28 @@ public class AiController : MonoBehaviour
         var idle = new EnemyState_Idle(enemyReferences);
         var patrol = new EnemyState_Patrol(enemyReferences, patrolPath);
         var detect = new EnemyState_Detect(enemyReferences, playerTarget);
+        var aware = new EnemyState_Aware(enemyReferences, playerTarget);
         var chase = new EnemyState_Chase(enemyReferences, playerTarget);
         var attack = new EnemyState_Attack(enemyReferences, playerTarget);
 
         // TRANSITIONS
         At(idle, patrol, () => hasPatrolPath && !isTargetInSight(playerTarget));
         At(idle, detect, () => enableDetection && isTargetInSight(playerTarget));
-        At(idle, chase, () => (!enableDetection && isTargetInSight(playerTarget)) || alarmed);
-        At(idle, attack, () => !enableDetection && isTargetInShootingRange(playerTarget) && isTargetInSight(playerTarget));
-        At(patrol, chase, () => (!enableDetection && isTargetInSight(playerTarget)) || alarmed);
+        At(idle, aware, () => !enableDetection && isTargetInSight(playerTarget) || alarmed);
+
         At(patrol, detect, () => enableDetection && isTargetInSight(playerTarget));
-        At(detect, chase, () => detect.TargetDetected());
+        At(patrol, aware, () => !enableDetection && isTargetInSight(playerTarget) || alarmed);
+
+        At(detect, aware, () => detect.TargetDetected());
         At(detect, idle, () => !isTargetInSight(playerTarget));
-        At(chase, attack, () => isTargetInShootingRange(playerTarget) && isTargetInSight(playerTarget));
-        At(attack, chase, () => !isTargetInShootingRange(playerTarget) || !isTargetInSight(playerTarget));
-        // At(attack, idle, () => !isTargetInShootingRange(playerTarget) && !isTargetInSight(playerTarget));
+
+        At(aware, chase, () => !canAttackTarget(playerTarget) && isTargetReachable(playerTarget));
+        At(aware, attack, () => canAttackTarget(playerTarget));
+
+        At(chase, attack, () => canAttackTarget(playerTarget));
+        At(chase, aware, () => !canAttackTarget(playerTarget) && !isTargetReachable(playerTarget));
+        
+        At(attack, aware, () => !canAttackTarget(playerTarget));
 
         // START STATE
         fsm.SetState(idle);
@@ -94,7 +101,17 @@ public class AiController : MonoBehaviour
         return false;
     }
 
-    private bool isTargetInShootingRange(Transform target) {
+    private bool isTargetInAttackRange(Transform target) {
         return Vector3.Distance(target.position, enemyReferences.transform.position) < enemyReferences.shootingRange;
+    }
+
+    private bool isTargetReachable(Transform target) {
+        UnityEngine.AI.NavMeshPath path = new UnityEngine.AI.NavMeshPath();
+
+        return enemyReferences.navMesh.CalculatePath(target.position, path) && path.status == UnityEngine.AI.NavMeshPathStatus.PathComplete;
+    }
+
+    private bool canAttackTarget(Transform target) {
+        return isTargetInAttackRange(target) && isTargetInSight(target);
     }
 }
