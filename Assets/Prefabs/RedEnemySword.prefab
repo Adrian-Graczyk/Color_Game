@@ -2516,6 +2516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDead: 0
   forceMultiplier: 0
+  onEnemyDeath: {fileID: 11400000, guid: 25c276ff50463614e87f4eaf418a1745, type: 2}
   deathSound: {fileID: 2861281688635714431}
 --- !u!114 &253519583
 MonoBehaviour:

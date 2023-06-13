@@ -12,6 +12,9 @@ public class CheckpointManager : MonoBehaviour
     public GunScript gunScript;
     public BladeColorChange bladeColorScript;
 
+    [Header("Events")]
+    public GameEvent onEnemyCountChanged;
+
     [HideInInspector] public bool isLevelEndTriggerActivated = false;
 
     private int currentCheckpoint = 0;
@@ -23,15 +26,12 @@ public class CheckpointManager : MonoBehaviour
 
         readPlayerWeaponsData();
         activateCheckpoints();
+
+        onEnemyCountChanged.Raise(this, checkpoints[currentCheckpoint].getAliveEnemiesCount());
     }
 
     void Update()
     {
-        if (checkpoints[currentCheckpoint].areAllEnemiesDead() && (currentCheckpoint + 1 < checkpoints.Count)) {
-            checkpoints[currentCheckpoint + 1].enableCheckpointTrigger();
-            isLevelEndTriggerActivated = (currentCheckpoint + 1 == checkpoints.Count - 1);
-        }
-
         if (Input.GetKeyDown(KeyCode.R))
         {
             resetObjects();
@@ -56,12 +56,23 @@ public class CheckpointManager : MonoBehaviour
 
         readPlayerWeaponsData();
         activateCheckpoints();
+
+        onEnemyCountChanged.Raise(this, checkpoints[currentCheckpoint].getAliveEnemiesCount());
     }
 
     public void resetObjects() {
         checkpoints[currentCheckpoint].resetObjects();
         resetPlayer();
         clearBullets();
+    }
+
+    public void onEnemyDeath(Component sender, object data) {
+        if (checkpoints[currentCheckpoint].areAllEnemiesDead() && (currentCheckpoint + 1 < checkpoints.Count)) {
+            checkpoints[currentCheckpoint + 1].enableCheckpointTrigger();
+            isLevelEndTriggerActivated = (currentCheckpoint + 1 == checkpoints.Count - 1);
+        }
+
+        onEnemyCountChanged.Raise(this, checkpoints[currentCheckpoint].getAliveEnemiesCount());
     }
 
     private void activateCheckpoints()

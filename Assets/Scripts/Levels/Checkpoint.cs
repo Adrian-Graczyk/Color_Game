@@ -39,6 +39,14 @@ public class Checkpoint : MonoBehaviour
 
     }
 
+    public int getAliveEnemiesCount() 
+    {
+        return copiedObjects
+            .Where(obj => obj.CompareTag("Enemy") && !obj.GetComponent<RagdollScript>().isDead)
+            .ToList()
+            .Count;
+    }
+
     public void setActiveObjects(bool isActive) 
     {
         copiedObjects.ForEach(copy => { copy.SetActive(isActive); });

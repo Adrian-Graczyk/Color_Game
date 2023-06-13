@@ -31,7 +31,6 @@ public class HUDScript : MonoBehaviour
     private GameObject enemyHolder;
 
 
-
     void Start()
     {
         gunHUD = transform.Find("Gun").gameObject;
@@ -51,51 +50,19 @@ public class HUDScript : MonoBehaviour
     {
         if (gun.activeSelf)
         {
-            gunHUD.SetActive(true);
             ammoTextMeshPro.text = gunScript.currentAmmo.ToString();
         }
-        else
-        {
-            gunHUD.SetActive(false);
-        }
 
-
-        if (sword.activeSelf)
-            swordHUD.SetActive(true);
-        else
-            swordHUD.SetActive(false);
-
-        if (dash.canDash)
-            dashHUD.SetActive(true);
-        else
-            dashHUD.SetActive(false);
-
-        SetEnemiesCounter();
-
+        gunHUD.SetActive(gun.activeSelf);
+        swordHUD.SetActive(sword.activeSelf);
+        dashHUD.SetActive(dash.canDash);
     }
 
-    void SetEnemiesCounter()
-    {
-        enemiesCounterText.text = GetEnemiesAlive().ToString();
+    public void onEnemyCountChanged(Component sender, object data) {
+        Debug.Log("onEnemyCountChanged event received with data: " + data);
 
-    }
-        
-    int GetEnemiesAlive()
-    {
-        int aliveEnemiesCounter = 0;
-        if (enemyHolder != null)
-        {
-            foreach (Transform child in enemyHolder.transform)
-            {
-                if (child.CompareTag("Enemy"))
-                {
-                    if (!child.GetComponent<RagdollScript>().isDead)
-                    {
-                        aliveEnemiesCounter++;
-                    }
-                }
-            }
+        if (data is int) {
+            enemiesCounterText.text = ((int) data).ToString();
         }
-        return aliveEnemiesCounter;
     }
 }
