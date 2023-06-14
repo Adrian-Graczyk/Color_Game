@@ -543,10 +543,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Niegdy\u015B biedne, lecz t\u0119tni\u0105ce \u017Cyciem i r\xF3\u017Cnorodne
-    spo\u0142ecze\u0144stwo by\u0142o teraz szar\u0105 i jednorodn\u0105 mas\u0105
-    ludzi, wszyscy identyczni pod wzgl\u0119dem wygl\u0105du i osobowo\u015Bci, \u017Cyj\u0105cymi
-    jednak w dobrych warunkach."
+  m_text: Once a poor but vibrant and diverse society, it had now become a gray and
+    homogeneous mass of people, all identical in appearance and personality, though
+    living in decent conditions.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -801,10 +800,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Partia Oczyszczenia wiedzia\u0142a, \u017Ce musi podj\u0105\u0107 zdecydowane
-    dzia\u0142ania, aby st\u0142umi\u0107 ruch oporu, zanim nabierze on zbyt du\u017Cego
-    rozp\u0119du. Wys\u0142ali Egzekutora, swojego najlepszego \u017Co\u0142nierza,
-    aby wytropi\u0142 i wyeliminowa\u0142 przyw\xF3dc\xF3w ruchu oporu."
+  m_text: The Purification Party knew they had to take decisive action to suppress
+    the resistance movement before it gained too much momentum. They sent their best
+    soldier, codenamed "The Executor," to track down and eliminate the leaders of
+    the resistance.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1228,11 +1227,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Wierzyli, \u017Ce usuwaj\u0105c te rzeczy, mog\u0105 stworzy\u0107 \u015Bwiat
-    wolny od konflikt\xF3w i cierpienia. Ruch nabra\u0142 rozp\u0119du i wkr\xF3tce
-    wok\xF3\u0142 jego idea\u0142\xF3w powsta\u0142a partia polityczna - \u201EPartia
-    Oczyszczenia\u201D. Partia szybko dosz\u0142a do w\u0142adzy, obiecuj\u0105c
-    stworzy\u0107 utopi\u0119 dla wszystkich. "
+  m_text: The movement gained momentum, and soon a political party called the "Purification
+    Party" formed around its ideals. The party quickly rose to power, promising to
+    create a utopia for all.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1389,9 +1386,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Lata mija\u0142y, a w\u0142adza partii tylko si\u0119 zacie\u015Bnia\u0142a.
-    U\u017Cywali si\u0142y militarnej, aby st\u0142umi\u0107 wszystkie sprzeciwy
-    oraz utrzyma\u0107 indoktrynacj\u0119 ludno\u015Bci. "
+  m_text: 'Years passed, and the party''s grip on power only grew tighter. They used
+    military force to suppress all opposition and maintain the indoctrination of
+    the population. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1527,9 +1524,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Na pocz\u0105tku XXII wieku \u015Bwiat prze\u017Cywa\u0142 powa\u017Cny
-    kryzys. Ludzka populacja przekroczy\u0142a 10 miliard\xF3w, a zasoby si\u0119
-    ko\u0144czy\u0142y. Doprowadzi\u0142o to do ogromnej biedy oraz g\u0142odu. "
+  m_text: In the early 22nd century, the world was experiencing a severe crisis.
+    The human population had surpassed 10 billion, and resources were running out,
+    leading to widespread poverty and famine.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1707,9 +1704,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Niepokoje spo\u0142eczne narasta\u0142y. W tym chaotycznym \u015Bwiecie
-    pojawi\u0142a si\u0119 nowa ideologia, znana jako \u201EOczyszczenie\u201D, kt\xF3ra
-    zacz\u0119\u0142a g\u0142osi\u0107 swoje przekonania w\u015Br\xF3d ludzi."
+  m_text: Social unrest was escalating, and in this chaotic world, a new ideology
+    emerged, known as "Purification," which began spreading its beliefs among the
+    people.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2134,10 +2131,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Kiedy zacz\u0119li rz\u0105dzi\u0107 krajem, zacz\u0119li instalowa\u0107
-    implanty w m\xF3zgu ka\u017Cdego noworodka, kt\xF3re mia\u0142y usuwa\u0107 wszelkie
-    emocje i eliminowa\u0107 postrzeganie kolor\xF3w. Implanty sprawi\u0142y r\xF3wnie\u017C,
-    \u017Ce ludzie byli pos\u0142uszni, niezdolni do buntu ani kwestionowania autorytetu."
+  m_text: When they came into governance, they started installing brain implants
+    in every newborn, designed to eliminate all emotions and perception of colors.
+    The implants also made people obedient, incapable of rebellion or questioning
+    authority.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2407,8 +2404,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Oczyszczenie g\u0142osi\u0142o, \u017Ce jedynym sposobem na ocalenie ludzko\u015Bci
-    jest stworzenie doskona\u0142ego spo\u0142ecze\u0144stwa, bez emocji, bez indywidualno\u015Bci. "
+  m_text: 'Purification preached that the only way to save humanity was to create
+    a perfect society devoid of emotions and individuality. They believed that by
+    removing these aspects, they could establish a world free from conflicts and
+    suffering. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2565,9 +2564,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Z grup ludzi z wy\u0142\u0105czonymi implantami, kt\xF3rzy sami siebie
-    nazywali \u201EPrzebudzonymi\u201D, zacz\u0105\u0142 tworzy\u0107 si\u0119 ruch
-    oporu. "
+  m_text: The Purification Party sought a solution but was unable to fix the implant
+    software. From the groups of people with deactivated implants, who called themselves
+    "The Awakened," a resistance movement began to form.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2975,12 +2974,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Pocz\u0105tkowo osoby z takimi implantami by\u0142y okre\u015Blane jako
-    \u201Ewadliwe\u201D i w sekrecie usuwane ze spo\u0142ecze\u0144stwa, ale gdy
-    coraz wi\u0119cej ludzi zacz\u0119\u0142o odczuwa\u0107 emocje, Partia Oczyszczenia
-    nie mog\u0142a d\u0142u\u017Cej radzi\u0107 sobie z tym problemem w ten spos\xF3b.
-    Wiedzieli, \u017Ce je\u015Bli rozejd\u0105 si\u0119 wie\u015Bci o awarii chipa,
-    mo\u017Ce to oznacza\u0107 koniec ich re\u017Cimu."
+  m_text: Initially, individuals with such implants were labeled as "flawed" and
+    secretly removed from society. However, as more and more people began experiencing
+    emotions, the Purification Party could no longer handle the problem in this manner.
+    They knew that if news of the chip malfunction spread, it could mean the end
+    of their regime.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3232,9 +3230,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Po pewnym czasie, z nieznanego powodu, dosz\u0142o do pierwszego uszkodzenia
-    implantu u doros\u0142ego cz\u0142owieka. Po tym wydarzeniu implanty zacz\u0119\u0142y
-    by\u0107 dysfunkcyjne coraz cz\u0119\u015Bciej. \r\n\r\n"
+  m_text: "\rAfter some time, for an unknown reason, the first malfunction of an
+    implant occurred in an adult. Following this event, implant malfunctions became
+    increasingly common. \r\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

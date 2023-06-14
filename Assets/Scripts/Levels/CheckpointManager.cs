@@ -136,6 +136,6 @@ public class CheckpointManager : MonoBehaviour
             }
         }
 
-        SceneManager.LoadScene(0);  // go back to MainMenu
+        SceneManager.LoadScene(1);  // go back to MainMenu
     }
 }
