@@ -21,18 +21,19 @@ public class BulletPickup : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
-            if (Physics.Raycast(ray, out hitInfo))
-            {
-                if (Vector3.Distance(ray.origin, hitInfo.point) > pickupRange) {
-                    return;
-                }
 
-                Collider hitCollider = hitInfo.collider;
+            RaycastHit[] hits = Physics.RaycastAll(ray, pickupRange);
+
+            foreach (var hit in hits)
+            {
+                Collider hitCollider = hit.collider;
 
                 if (hitCollider.CompareTag("Bullet")) {
                     onBulletPickUp.Raise(this, hitCollider.GetComponent<Renderer>().sharedMaterial);
                     Destroy(hitCollider.gameObject);
                     bulletPickUpSound.Play();
+
+                    return;
                 }
             }
         }
