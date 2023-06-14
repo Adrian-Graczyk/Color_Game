@@ -134,8 +134,8 @@ public class CheckpointManager : MonoBehaviour
             if (SaveSystem.LoadProgress().currentSceneIndex < nextSceneIndex) {
                 SaveSystem.SaveProgress(nextSceneIndex);
             }
-
-            SceneManager.LoadScene(0);  // go back to MainMenu
         }
+
+        SceneManager.LoadScene(0);  // go back to MainMenu
     }
 }
