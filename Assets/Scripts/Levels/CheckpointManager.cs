@@ -34,7 +34,7 @@ public class CheckpointManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            resetObjects();
+            resetCheckpoint();
         }
     }
 
@@ -60,10 +60,8 @@ public class CheckpointManager : MonoBehaviour
         onEnemyCountChanged.Raise(this, checkpoints[currentCheckpoint].getAliveEnemiesCount());
     }
 
-    public void resetObjects() {
-        checkpoints[currentCheckpoint].resetObjects();
-        resetPlayer();
-        clearBullets();
+    public void onPlayerDeath() {
+        resetCheckpoint();
     }
 
     public void onEnemyDeath(Component sender, object data) {
@@ -73,6 +71,14 @@ public class CheckpointManager : MonoBehaviour
         }
 
         onEnemyCountChanged.Raise(this, checkpoints[currentCheckpoint].getAliveEnemiesCount());
+    }
+
+    private void resetCheckpoint() {
+        checkpoints[currentCheckpoint].resetObjects();
+        resetPlayer();
+        clearBullets();
+
+         onEnemyCountChanged.Raise(this, checkpoints[currentCheckpoint].getAliveEnemiesCount());
     }
 
     private void activateCheckpoints()

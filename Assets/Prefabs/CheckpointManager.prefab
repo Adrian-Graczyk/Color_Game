@@ -102,7 +102,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7305363316968166503}
         m_TargetAssemblyTypeName: CheckpointManager, Assembly-CSharp
-        m_MethodName: resetObjects
+        m_MethodName: onPlayerDeath
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
