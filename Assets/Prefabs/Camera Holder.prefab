@@ -1913,7 +1913,7 @@ MonoBehaviour:
     type: 3}
   bulletPoint: {fileID: 2188371980579830876}
   bulletSpeed: 450
-  maxAmmo: 5
+  maxAmmo: 10
   gunDataProvider: {fileID: 111580427}
   currentAmmo: 0
   playerShotSound: {fileID: 775079636}
