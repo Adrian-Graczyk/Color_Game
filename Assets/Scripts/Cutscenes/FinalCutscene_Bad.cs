@@ -6,14 +6,12 @@ public class FinalCutscene_Bad : MonoBehaviour
 {
     [SerializeField] private GameObject timeline;
     [SerializeField] private GameObject timeline2;
-    [SerializeField] private GameObject virtualCamera;
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        if (other.CompareTag("Bullet"))
+        if (Input.GetMouseButtonDown(0))
         {
-                //virtualCamera.SetActive(true);
-                timeline.SetActive(false);
-                timeline2.SetActive(true);
+            timeline.SetActive(false);
+            timeline2.SetActive(true);
         }
     }
 }
