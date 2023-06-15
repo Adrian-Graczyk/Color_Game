@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class PauseMenuScript : MonoBehaviour
 {
     [SerializeField] private MoveCamera moveCameraScript;
@@ -12,6 +13,7 @@ public class PauseMenuScript : MonoBehaviour
 
     private GameObject pausePanel;
     private bool isPaused;
+    private bool canESC;
 
     private CursorLockMode desiredMode;
 
@@ -20,19 +22,22 @@ public class PauseMenuScript : MonoBehaviour
         isPaused = false;
         pausePanel = transform.GetChild(0).gameObject;
         pausePanel.SetActive(false);
+        canESC = true;
     }
 
     private void Update()
     {
-        if (!Input.GetKey(KeyCode.Escape)) { return;}
+        if (!Input.GetKeyDown(KeyCode.Escape) || !canESC) { return;}
              
         if(!isPaused)
         {
             Pause();
+            StartCoroutine(Wait());
         }
         else
         {
             Resume();
+            StartCoroutine(Wait());
         }
     }
 
@@ -91,4 +96,10 @@ public class PauseMenuScript : MonoBehaviour
         Cursor.visible = false;
     }
 
+    IEnumerator Wait()
+    {
+        canESC = false;       
+        yield return new WaitForSecondsRealtime(0.2f);
+        canESC = true;
+    }
 }
