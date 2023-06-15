@@ -5,9 +5,12 @@ using UnityEngine;
 public class EnableCutscene : MonoBehaviour
 {
     [SerializeField ]private GameObject cutscene;
-   
+
     private void OnTriggerEnter(Collider other)
     {
-        cutscene.SetActive(true);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            cutscene.SetActive(true);
+        }
     }
 }

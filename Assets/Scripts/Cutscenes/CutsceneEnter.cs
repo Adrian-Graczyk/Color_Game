@@ -12,10 +12,13 @@ public class CutsceneEnter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (checkpointManager.isLevelEndTriggerActivated)
+        if (other.gameObject.CompareTag("Player"))
         {
-            virtualCamera.SetActive(true);
-            timeline.SetActive(true);
-        }
+            if (checkpointManager.isLevelEndTriggerActivated)
+            {
+                virtualCamera.SetActive(true);
+                timeline.SetActive(true);
+            }
+        }   
     }
 }
