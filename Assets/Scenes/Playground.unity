@@ -3716,11 +3716,6 @@ PrefabInstance:
       propertyPath: pickupCollider
       value: 
       objectReference: {fileID: 2089037565}
-    - target: {fileID: 7473661167235685293, guid: b40cc020c76d76243b855f382bf3f716,
-        type: 3}
-      propertyPath: dashForce
-      value: 300
-      objectReference: {fileID: 0}
     - target: {fileID: 7473661167235685294, guid: b40cc020c76d76243b855f382bf3f716,
         type: 3}
       propertyPath: cam

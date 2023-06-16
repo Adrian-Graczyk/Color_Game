@@ -15601,7 +15601,7 @@ PrefabInstance:
     - target: {fileID: 1411636575289390435, guid: ac4f8906031b0814fb09b70ca3130729,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1411636575289390436, guid: ac4f8906031b0814fb09b70ca3130729,
         type: 3}
@@ -65485,11 +65485,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CachedValues:
-  - 127.4
-  - 127.4
-  - 127.4
-  - 127.4
-  - 127.4
+  - 187.01016554174325
+  - 187.01016554174325
+  - 187.01016554174325
+  - 187.01016554174325
+  - 187.01016554174325
 --- !u!114 &1574252565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71823,11 +71823,6 @@ PrefabInstance:
     - target: {fileID: 2188371979673095728, guid: 94aa53ee1c76bd244a258541d47031ff,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2188371980782940120, guid: 94aa53ee1c76bd244a258541d47031ff,
-        type: 3}
-      propertyPath: m_RenderPostProcessing
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2188371980782940123, guid: 94aa53ee1c76bd244a258541d47031ff,
