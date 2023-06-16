@@ -61,6 +61,8 @@ public class PauseMenuScript : MonoBehaviour
     {
         isPaused = false;
         Time.timeScale = 1f;
+        optionsPanel.SetActive(false);
+        mainPanel.SetActive(true);
         pausePanel.SetActive(false);
 
         EnablePlayer();

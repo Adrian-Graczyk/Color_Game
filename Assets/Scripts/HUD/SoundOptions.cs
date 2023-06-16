@@ -23,4 +23,9 @@ public class SoundOptions : MonoBehaviour
 
         gameObject.SetActive(false);
     }
+
+    private void Awake()
+    {
+        soundValue.SetText($"{(AudioListener.volume * 100).ToString("N0")}");
+    }
 }
