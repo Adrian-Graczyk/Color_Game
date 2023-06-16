@@ -8,10 +8,13 @@ public class PauseMenuScript : MonoBehaviour
 {
     [SerializeField] private MoveCamera moveCameraScript;
     [SerializeField] private PlayerLook playerLookScript;
-    [SerializeField] private AudioListener audioListener; 
+    [SerializeField] private AudioListener audioListener;
     [SerializeField] private GameObject fpsCamera;
 
     private GameObject pausePanel;
+    private GameObject mainPanel;
+    private GameObject optionsPanel;
+
     private bool isPaused;
     private bool canESC;
 
@@ -23,13 +26,16 @@ public class PauseMenuScript : MonoBehaviour
         pausePanel = transform.GetChild(0).gameObject;
         pausePanel.SetActive(false);
         canESC = true;
+
+        mainPanel = pausePanel.transform.GetChild(0).gameObject;
+        optionsPanel = pausePanel.transform.GetChild(1).gameObject;
     }
 
     private void Update()
     {
-        if (!Input.GetKeyDown(KeyCode.Escape) || !canESC) { return;}
-             
-        if(!isPaused)
+        if (!Input.GetKeyDown(KeyCode.Escape) || !canESC) { return; }
+
+        if (!isPaused)
         {
             Pause();
             StartCoroutine(Wait());
@@ -46,9 +52,9 @@ public class PauseMenuScript : MonoBehaviour
         isPaused = true;
         Time.timeScale = 0f;
         pausePanel.SetActive(true);
-       
+
         DisablePlayer();
-       
+
     }
 
     public void Resume()
@@ -58,7 +64,7 @@ public class PauseMenuScript : MonoBehaviour
         pausePanel.SetActive(false);
 
         EnablePlayer();
-        
+
     }
 
     public void BackToMenu()
@@ -68,6 +74,11 @@ public class PauseMenuScript : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void Options()
+    {
+        mainPanel.SetActive(false);
+        optionsPanel.SetActive(true);
+    }
 
     void DisablePlayer()
     {
