@@ -8,11 +8,12 @@ public static class SaveSystem
 
     public static void SaveProgress(int sceneIndex) 
     {
-        BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/" + saveFileName;
-        FileStream stream = new FileStream(path, FileMode.Create);
+        string path = SaveFilePath();
 
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = new FileStream(path, FileMode.Create);
         SaveData data = new SaveData(sceneIndex);
+
         formatter.Serialize(stream, data);
 
         stream.Close();
@@ -20,7 +21,7 @@ public static class SaveSystem
 
     public static SaveData LoadProgress()
     {
-        string path = Application.persistentDataPath + "/" + saveFileName;
+        string path = SaveFilePath();
 
         if (!File.Exists(path))
         {
@@ -36,5 +37,24 @@ public static class SaveSystem
         stream.Close();
 
         return saveData;
+    }
+
+    public static void DeleteSaveFile()
+    {
+        string path = SaveFilePath();
+
+        if (!File.Exists(path))
+        {
+            Debug.LogWarning("Save file " + path + " was not found");
+            return;
+        }
+
+        File.Delete(path);
+        Debug.Log("Save file " + path + " deleted");
+    }
+
+    private static string SaveFilePath()
+    {
+        return Application.persistentDataPath + "/" + saveFileName;
     }
 }

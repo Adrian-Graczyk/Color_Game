@@ -7,6 +7,6 @@ public class CutsceneNextLevel : MonoBehaviour
 {
     void OnEnable()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

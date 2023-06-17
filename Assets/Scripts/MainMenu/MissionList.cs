@@ -19,7 +19,7 @@ public class MissionList : MonoBehaviour
         for (int i = 0; i < childCount; i++)
         {
             Transform child = transform.GetChild(i);
-            child.gameObject.SetActive(i < index);
+            child.gameObject.SetActive(i < index - 1);
         }
     }
-}
+} 
