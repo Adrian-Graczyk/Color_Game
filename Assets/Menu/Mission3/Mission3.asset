@@ -16,4 +16,4 @@ MonoBehaviour:
   captainThumbnail: {fileID: 2800000, guid: 0147c23d94a01284cbd570ab46e31bdb, type: 3}
   rebelThumbnail: {fileID: 2800000, guid: 07f74b1451770dd4a9dad455bcc57072, type: 3}
   missionDescription: {fileID: 4900000, guid: be648258241fedf42acf5bd382e4884d, type: 3}
-  scene: {fileID: 102900000, guid: 3c5cd3c74572a7e45b501107a6388dea, type: 3}
+  sceneName: Tower

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityEditor;
 
 
@@ -11,5 +12,10 @@ public class BriefingScreenData : ScriptableObject {
     public Texture2D captainThumbnail;
     public Texture2D rebelThumbnail;
     public TextAsset missionDescription;
-    public SceneAsset scene;
+    [SerializeField] private string sceneName;
+
+    public void LoadScene()
+    {
+        SceneManager.LoadScene(sceneName);
+    }
 }

@@ -16,4 +16,4 @@ MonoBehaviour:
   captainThumbnail: {fileID: 2800000, guid: 0147c23d94a01284cbd570ab46e31bdb, type: 3}
   rebelThumbnail: {fileID: 2800000, guid: e4590e66f102b7241983370ca2cae273, type: 3}
   missionDescription: {fileID: 4900000, guid: 57fd780e2a71abd4da72613a5fd29bb7, type: 3}
-  scene: {fileID: 102900000, guid: 575a1fb3f17281147894e02a8a64cf42, type: 3}
+  sceneName: Corridors

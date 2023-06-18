@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
@@ -18,7 +17,7 @@ public class MissionBriefing : MonoBehaviour
     }
 
     public void startMission() {
-        SceneManager.LoadScene(briefingScreenData.scene.name);
+        briefingScreenData.LoadScene();
     }
 
     public void loadMission(BriefingScreenData data) {

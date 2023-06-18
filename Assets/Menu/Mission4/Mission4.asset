@@ -16,4 +16,4 @@ MonoBehaviour:
   captainThumbnail: {fileID: 2800000, guid: 2faa638eaab3bc6409cb1ff1d2c4d32f, type: 3}
   rebelThumbnail: {fileID: 2800000, guid: 3eebd30a685be3144aa393e26025daa7, type: 3}
   missionDescription: {fileID: 4900000, guid: 745bceedca9a7d447a47f602906e5de6, type: 3}
-  scene: {fileID: 102900000, guid: 2771fa173c84ab74c95c90a6f1beb88f, type: 3}
+  sceneName: Hangar
