@@ -65861,6 +65861,8 @@ MonoBehaviour:
   gun: {fileID: 249322794}
   fpsCamera: {fileID: 111580420}
   weaponSwitcher: {fileID: 111580434}
+  bulletMaterial: {fileID: 2100000, guid: 8c834da2964419245b771b10b8d17ab7, type: 2}
+  onBulletPickUp: {fileID: 11400000, guid: 395d3c781bb1a574a8bbb9782ddf96d7, type: 2}
 --- !u!4 &1579466822 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7791276896642570600, guid: eb03990aa174b86448b6c7d737db8d65,
@@ -68302,6 +68304,53 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8c834da2964419245b771b10b8d17ab7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f99df1970d4b71441a320ce6acc52709, type: 3}
+--- !u!1 &1756770972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1756770974}
+  - component: {fileID: 1756770973}
+  m_Layer: 0
+  m_Name: test
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1756770973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756770972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb62a1d03f136d342a123cff098681ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gun: {fileID: 249322794}
+  material: {fileID: 2100000, guid: 8c834da2964419245b771b10b8d17ab7, type: 2}
+  onBulletPickUp: {fileID: 11400000, guid: 395d3c781bb1a574a8bbb9782ddf96d7, type: 2}
+--- !u!4 &1756770974
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756770972}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.223167, y: 5.195432, z: -13.751873}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1772095034
 Rigidbody:
   m_ObjectHideFlags: 0

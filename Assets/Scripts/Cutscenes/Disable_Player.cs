@@ -7,17 +7,17 @@ public class Disable_Player : MonoBehaviour
     [SerializeField] private GameObject gun;
     [SerializeField] private GameObject fpsCamera;
     [SerializeField] private WeaponSwitcher weaponSwitcher;
+    [SerializeField] private Material bulletMaterial;
 
+    [Header("Events")]
+    public GameEvent onBulletPickUp;
 
-    private Material gunMaterial;
     private void Start()
     {
-        gunMaterial = gun.GetComponent<Renderer>().material;
+        onBulletPickUp.Raise(this, bulletMaterial);
+        gun.GetComponent<Renderer>().material.SetColor("_EmissionColor", new Color(0, 255, 255));
 
-
-        gunMaterial.SetColor("_EmissionColor", new Color(0, 255, 255));
         GameObject.FindGameObjectWithTag("Player").SetActive(false);
-
 
         weaponSwitcher.enabled = false;
 
