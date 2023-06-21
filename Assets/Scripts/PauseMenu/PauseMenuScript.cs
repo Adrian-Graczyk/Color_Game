@@ -86,6 +86,7 @@ public class PauseMenuScript : MonoBehaviour
     {
         moveCameraScript.enabled = false;
         playerLookScript.enabled = false;
+        AudioListener.volume = 0;
         audioListener.enabled = false;
 
         Cursor.visible = true;
@@ -103,6 +104,7 @@ public class PauseMenuScript : MonoBehaviour
         moveCameraScript.enabled = true;
         playerLookScript.enabled = true;
         audioListener.enabled = true;
+        AudioListener.volume = 1;
 
         fpsCamera.SetActive(true);
         desiredMode = CursorLockMode.Confined;
