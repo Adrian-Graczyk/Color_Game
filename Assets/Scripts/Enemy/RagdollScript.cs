@@ -71,7 +71,7 @@ public class RagdollScript : MonoBehaviour
                 Debug.Log("same material (RagdollScript)");
                 EnableRagdoll();
 
-                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                GameObject player = PlayerFinder.playerGameObject();
                 Vector3 forceDirection = transform.position - player.transform.position;
                 forceDirection.Normalize();
                 // Calculate the direction from the collision point to the ragdoll's position

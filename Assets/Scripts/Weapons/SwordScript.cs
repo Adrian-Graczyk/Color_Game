@@ -22,7 +22,7 @@ public class SwordScript : MonoBehaviour
     {
         animator = Sword.GetComponent<Animator>();
         swordBladeCollider = SwordBlade.GetComponent<BoxCollider>();
-        Physics.IgnoreCollision(swordBladeCollider, GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Collider>(), true);
+        Physics.IgnoreCollision(swordBladeCollider, PlayerFinder.playerCollider(), true);
 
         swordBladeCollider.enabled = false;
     }

@@ -15,7 +15,7 @@ public class EnemyState_Attack : IState
     }
 
     public void OnEnter() {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        target = PlayerFinder.playerGameObject().transform;
         enemyReferences.animator.SetBool("Attack", true);
         enemyReferences.navMesh.SetDestination(enemyReferences.transform.position);
         alarmEnemies();

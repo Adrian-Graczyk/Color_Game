@@ -21,7 +21,7 @@ public class AiController : MonoBehaviour
         fsm = new StateMachine();
 
         hasPatrolPath = patrolPath != null;
-        playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
+        playerTarget = PlayerFinder.playerGameObject().transform;
 
         // STATES
         var idle = new EnemyState_Idle(enemyReferences);
@@ -92,8 +92,8 @@ public class AiController : MonoBehaviour
                 int layerMask = ~(1 << LayerMask.NameToLayer("Enemy")); // ignore Enemy layer
                 if (Physics.Linecast(enemyReferences.transform.position + Vector3.up, target.position, out RaycastHit hit, layerMask))
                 {
-                    Debug.Log("Can see: " + hit.collider.gameObject.name + " layer: " + LayerMask.LayerToName(hit.collider.gameObject.layer));
-                    return hit.collider.gameObject.layer == LayerMask.NameToLayer("Player");
+                    Debug.Log("Can see: " + hit.collider.tag + " layer: " + hit.collider.gameObject.layer);
+                    return hit.collider.CompareTag("Player");
                 }
             }
         }

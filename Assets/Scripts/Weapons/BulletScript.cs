@@ -26,7 +26,7 @@ public class BulletScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         if(!gameObject.CompareTag("EnemyBullet")) {
-            Physics.IgnoreCollision(GetComponent<Collider>(), GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Collider>(), true);
+            Physics.IgnoreCollision(GetComponent<Collider>(), PlayerFinder.playerCollider(), true);
         }
         
         if (pickupCollider != null) {

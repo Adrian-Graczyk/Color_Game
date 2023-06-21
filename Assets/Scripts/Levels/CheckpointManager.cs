@@ -91,7 +91,7 @@ public class CheckpointManager : MonoBehaviour
 
     private void resetPlayer()
     {
-        var player = GameObject.FindGameObjectWithTag("Player");
+        var player = PlayerFinder.playerGameObject();
         player.transform.position = checkpoints[currentCheckpoint].transform.position;
         player.transform.rotation = checkpoints[currentCheckpoint].transform.rotation;
 

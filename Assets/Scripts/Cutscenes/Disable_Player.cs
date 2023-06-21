@@ -17,7 +17,7 @@ public class Disable_Player : MonoBehaviour
         onBulletPickUp.Raise(this, bulletMaterial);
         gun.GetComponent<Renderer>().material.SetColor("_EmissionColor", new Color(0, 255, 255));
 
-        GameObject.FindGameObjectWithTag("Player").SetActive(false);
+        PlayerFinder.playerGameObject().SetActive(false);
 
         weaponSwitcher.enabled = false;
 
