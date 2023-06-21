@@ -5,9 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public class SaveData
 {
-    public int currentSceneIndex = 2;
+    public int currentSceneIndex = 3;
 
-    public SaveData(int currentSceneIndex = 2)
+    public SaveData(int currentSceneIndex = 3)
     {
         this.currentSceneIndex = currentSceneIndex; 
     }
