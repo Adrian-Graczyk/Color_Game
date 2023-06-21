@@ -261,7 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orientation: {fileID: 7473661168570298944}
   playerMovement: {fileID: 7473661167235685297}
-  dashForce: 300
+  dashForce: 150
   dashTime: 0.1
   dashCooldownTime: 3
   canDash: 1

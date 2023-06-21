@@ -21,6 +21,8 @@ public class Disable_Player : MonoBehaviour
 
         weaponSwitcher.enabled = false;
 
+        gun.GetComponent<GunScript>().enabled = false;
+
 
         foreach (Transform weapon in fpsCamera.transform)
         {

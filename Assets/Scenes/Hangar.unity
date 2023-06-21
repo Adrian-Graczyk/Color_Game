@@ -6876,6 +6876,11 @@ PrefabInstance:
       propertyPath: pickupCollider
       value: 
       objectReference: {fileID: 2089037583}
+    - target: {fileID: 7473661167235685293, guid: b40cc020c76d76243b855f382bf3f716,
+        type: 3}
+      propertyPath: dashForce
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 7473661167235685294, guid: b40cc020c76d76243b855f382bf3f716,
         type: 3}
       propertyPath: cam
@@ -15948,6 +15953,10 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: -751974307775811126, guid: 2274503e99ce44c498e854539d264f2f, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 2956220632134107421, guid: 2274503e99ce44c498e854539d264f2f, type: 2}
+    value: {fileID: 1695770384}
+  - key: {fileID: 1789194584346815453, guid: 2274503e99ce44c498e854539d264f2f, type: 2}
+    value: {fileID: 2591333431564336554}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &788051696
@@ -58413,7 +58422,7 @@ PrefabInstance:
     - target: {fileID: -2209927280054302620, guid: 05a849333ef752b4281fe491257dbc21,
         type: 3}
       propertyPath: checkpointObjects.Array.size
-      value: 22
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: -2209927280054302620, guid: 05a849333ef752b4281fe491257dbc21,
         type: 3}
@@ -58529,7 +58538,17 @@ PrefabInstance:
         type: 3}
       propertyPath: checkpointObjects.Array.data[22]
       value: 
-      objectReference: {fileID: 2141218905}
+      objectReference: {fileID: 1276751324}
+    - target: {fileID: -2209927280054302620, guid: 05a849333ef752b4281fe491257dbc21,
+        type: 3}
+      propertyPath: checkpointObjects.Array.data[23]
+      value: 
+      objectReference: {fileID: 65416247}
+    - target: {fileID: -2209927280054302620, guid: 05a849333ef752b4281fe491257dbc21,
+        type: 3}
+      propertyPath: checkpointObjects.Array.data[24]
+      value: 
+      objectReference: {fileID: 1526115917}
     - target: {fileID: 6551239814545091159, guid: 05a849333ef752b4281fe491257dbc21,
         type: 3}
       propertyPath: m_Name
@@ -65810,6 +65829,8 @@ PlayableDirector:
     value: {fileID: 235772155}
   - key: {fileID: 29757152348642480, guid: 4bb04507ab2f6e849896bde83efe9a3c, type: 2}
     value: {fileID: 214117636}
+  - key: {fileID: 3977298138975163606, guid: 4bb04507ab2f6e849896bde83efe9a3c, type: 2}
+    value: {fileID: 1695770384}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1574252563
@@ -65841,11 +65862,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CachedValues:
-  - 187.01016554174325
-  - 187.01016554174325
-  - 187.01016554174325
-  - 187.01016554174325
-  - 187.01016554174325
+  - 4.6
+  - 4.6
+  - 4.6
+  - 4.6
+  - 4.6
 --- !u!114 &1574252565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68105,6 +68126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1695770383}
   - component: {fileID: 1695770382}
+  - component: {fileID: 1695770384}
   m_Layer: 0
   m_Name: Soundtrack
   m_TagString: Untagged
@@ -68223,6 +68245,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1695770384
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695770381}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1733017626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68333,9 +68376,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb62a1d03f136d342a123cff098681ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gun: {fileID: 249322794}
-  material: {fileID: 2100000, guid: 8c834da2964419245b771b10b8d17ab7, type: 2}
-  onBulletPickUp: {fileID: 11400000, guid: 395d3c781bb1a574a8bbb9782ddf96d7, type: 2}
 --- !u!4 &1756770974
 Transform:
   m_ObjectHideFlags: 0
