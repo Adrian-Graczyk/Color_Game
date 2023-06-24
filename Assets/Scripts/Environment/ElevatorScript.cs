@@ -11,11 +11,13 @@ public class ElevatorScript : MonoBehaviour
     private Rigidbody rb;
     private int direction = 0;
     private bool isMoving = false;
+    private Vector3 targetPosition;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
+        targetPosition = transform.position;
     }
 
     private void FixedUpdate()
@@ -26,8 +28,7 @@ public class ElevatorScript : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
+    private void OnCollisionEnter(Collision other) {
         if (other.gameObject.CompareTag("Player"))
         {
             if (!isMoving)
@@ -35,32 +36,34 @@ public class ElevatorScript : MonoBehaviour
                 direction = 1;
                 isMoving = true;
                 rb.isKinematic = false;
-                StartCoroutine(MoveToHeight(maxHeight));
+                StartCoroutine(MoveToHeight());
             }
+
+            targetPosition.y = maxHeight;
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
+    private void OnCollisionExit(Collision other) {
         if (other.gameObject.CompareTag("Player"))
         {
             if (!isMoving)
             {
                 direction = -1;
                 isMoving = true;
-                StartCoroutine(MoveToHeight(minHeight));
+                StartCoroutine(MoveToHeight());
             }
+
+            targetPosition.y = minHeight;
         }
     }
 
     private void MoveElevator()
     {
-        float targetHeight = direction == 1 ? maxHeight : minHeight;
         float step = speed * Time.deltaTime;
-        Vector3 targetPosition = new Vector3(transform.position.x, targetHeight, transform.position.z);
+
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
 
-        if (transform.position.y == targetHeight)
+        if (transform.position == targetPosition)
         {
             isMoving = false;
             rb.velocity = Vector3.zero;
@@ -68,10 +71,10 @@ public class ElevatorScript : MonoBehaviour
         }
     }
 
-    private IEnumerator MoveToHeight(float targetHeight)
+    private IEnumerator MoveToHeight()
     {
         float step = speed * Time.deltaTime;
-        Vector3 targetPosition = new Vector3(transform.position.x, targetHeight, transform.position.z);
+
         while (transform.position != targetPosition)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
