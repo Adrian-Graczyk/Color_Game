@@ -11,7 +11,6 @@ public class ElevatorStuck : MonoBehaviour
     private Rigidbody rb;
     private int direction = 0;
     private bool isMoving = false;
-    private bool couldMove = true;
 
     private void Start()
     {
@@ -29,7 +28,7 @@ public class ElevatorStuck : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Player") && couldMove)
+        if (other.gameObject.CompareTag("Player"))
         {
             if (!isMoving)
             {

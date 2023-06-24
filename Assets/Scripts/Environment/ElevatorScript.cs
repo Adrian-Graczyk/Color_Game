@@ -8,10 +8,9 @@ public class ElevatorScript : MonoBehaviour
     [SerializeField] private float minHeight = 0f;
     [SerializeField] private float speed = 1f;
 
-    private Rigidbody rb;
-    private int direction = 0;
-    private bool isMoving = false;
+    private bool isPlayerOnElevator = false;
     private Vector3 targetPosition;
+    private Rigidbody rb;
 
     private void Start()
     {
@@ -20,69 +19,38 @@ public class ElevatorScript : MonoBehaviour
         targetPosition = transform.position;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if (isMoving)
+        if (isPlayerOnElevator)
         {
-            MoveElevator();
+            MoveElevator(maxHeight);
+        }
+        else
+        {
+            MoveElevator(minHeight);
         }
     }
 
-    private void OnCollisionEnter(Collision other) {
+    private void OnTriggerEnter(Collider other)
+    {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (!isMoving)
-            {
-                direction = 1;
-                isMoving = true;
-                rb.isKinematic = false;
-                StartCoroutine(MoveToHeight());
-            }
-
-            targetPosition.y = maxHeight;
+            isPlayerOnElevator = true;
         }
     }
 
-    private void OnCollisionExit(Collision other) {
+    private void OnTriggerExit(Collider other)
+    {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (!isMoving)
-            {
-                direction = -1;
-                isMoving = true;
-                StartCoroutine(MoveToHeight());
-            }
-
-            targetPosition.y = minHeight;
+            isPlayerOnElevator = false;
         }
     }
 
-    private void MoveElevator()
+    private void MoveElevator(float targetHeight)
     {
         float step = speed * Time.deltaTime;
-
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
-
-        if (transform.position == targetPosition)
-        {
-            isMoving = false;
-            rb.velocity = Vector3.zero;
-            rb.isKinematic = true;
-        }
-    }
-
-    private IEnumerator MoveToHeight()
-    {
-        float step = speed * Time.deltaTime;
-
-        while (transform.position != targetPosition)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
-            yield return null;
-        }
-
-        isMoving = false;
-        rb.velocity = Vector3.zero;
-        rb.isKinematic = true;
+        targetPosition.y = targetHeight;
+        rb.MovePosition(Vector3.MoveTowards(rb.position, targetPosition, step));
     }
 }
