@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hangar.unity
     guid: 2771fa173c84ab74c95c90a6f1beb88f
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 4a95960f9b1a32c42913e27e757bad1c
   m_configObjects: {}
